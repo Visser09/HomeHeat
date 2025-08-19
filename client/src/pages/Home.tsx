@@ -136,15 +136,7 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Emergency Banner */}
-        <div className="absolute bottom-0 left-0 right-0 bg-red-600 text-white py-3">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="font-semibold" data-testid="emergency-banner">
-              <span className="mr-2">⚠️</span>
-              24/7 Emergency Service Available - No Overtime Charges for Comfort Club Members!
-            </p>
-          </div>
-        </div>
+        
       </section>
 
       {/* Comfort Club Feature */}
