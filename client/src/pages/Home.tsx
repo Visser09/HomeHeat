@@ -117,7 +117,7 @@ export default function Home() {
                 <Link href="/services">
                   <Button 
                     variant="outline" 
-                    className="border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-200 px-8 py-4 text-lg font-semibold"
+                    className="border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-200 px-8 py-4 text-lg font-semibold bg-[#ffffff05]"
                     data-testid="button-view-services"
                   >
                     View Services
