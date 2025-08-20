@@ -86,8 +86,9 @@ export default function Financing() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
+                variant="secondary"
+                size="lg"
                 onClick={handleCallForFinancing}
-                className="bg-white text-primary hover:bg-gray-50 px-8 py-4 text-lg font-semibold"
                 data-testid="button-call-financing"
               >
                 <Phone className="w-5 h-5 mr-2" />
@@ -95,8 +96,9 @@ export default function Financing() {
               </Button>
               <Link href="/contact">
                 <Button 
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-semibold"
+                  variant="ghost"
+                  size="lg"
+                  className="border-2 border-white text-white hover:bg-white/10"
                   data-testid="button-apply-online"
                 >
                   Apply Online
@@ -227,7 +229,8 @@ export default function Financing() {
             </p>
             <Link href="/contact">
               <Button 
-                className="bg-primary text-white hover:bg-primary-dark px-8 py-4 text-lg font-semibold"
+                variant="default"
+                size="lg"
                 data-testid="button-get-prequalified"
               >
                 Get Pre-Qualified Today
@@ -304,8 +307,9 @@ export default function Financing() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
+              variant="default"
+              size="lg"
               onClick={handleCallForFinancing}
-              className="bg-primary text-white hover:bg-primary-dark px-8 py-4 text-lg font-semibold"
               data-testid="button-call-for-info"
             >
               <Phone className="w-5 h-5 mr-2" />
@@ -313,8 +317,8 @@ export default function Financing() {
             </Button>
             <Link href="/contact">
               <Button 
-                variant="outline"
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg font-semibold"
+                variant="secondary"
+                size="lg"
                 data-testid="button-request-quote"
               >
                 Request Free Quote

@@ -99,7 +99,7 @@ export default function ChatBot() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-white hover:text-gray-200 hover:bg-primary-dark transition-colors duration-200"
+                className="text-white hover:bg-white/10"
                 onClick={() => setIsOpen(false)}
                 data-testid="chatbot-close"
               >
@@ -138,9 +138,9 @@ export default function ChatBot() {
                 data-testid="chatbot-input"
               />
               <Button
-                onClick={handleSendMessage}
-                className="bg-primary text-white hover:bg-primary-dark transition-colors duration-200"
+                variant="default"
                 size="icon"
+                onClick={handleSendMessage}
                 data-testid="chatbot-send"
               >
                 <Send className="w-4 h-4" />
@@ -152,8 +152,10 @@ export default function ChatBot() {
       
       {/* Chat Button */}
       <Button
+        variant="default"
+        size="icon"
+        className="w-14 h-14 rounded-full shadow-lg transition-all duration-200 transform hover:scale-105"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full shadow-lg bg-primary text-white hover:bg-primary-dark transition-all duration-200 transform hover:scale-105"
         data-testid="chatbot-toggle"
       >
         <MessageCircle className="w-6 h-6" />

@@ -127,7 +127,8 @@ export default function Services() {
             </p>
             <Link href="/contact">
               <Button 
-                className="bg-white text-primary hover:bg-gray-50 px-8 py-4 text-lg font-semibold"
+                variant="secondary"
+                size="lg"
                 data-testid="button-free-quote"
               >
                 <Phone className="w-5 h-5 mr-2" />
@@ -189,15 +190,14 @@ export default function Services() {
                         <div className="flex flex-col sm:flex-row gap-4">
                           <Link href="/contact">
                             <Button 
-                              className="bg-primary text-white hover:bg-primary-dark"
+                              variant="default"
                               data-testid={`button-quote-${service.id}`}
                             >
                               Get Quote
                             </Button>
                           </Link>
                           <Button 
-                            variant="outline"
-                            className="border-primary text-primary hover:bg-primary hover:text-white"
+                            variant="secondary"
                             data-testid={`button-call-${service.id}`}
                           >
                             <Phone className="w-4 h-4 mr-2" />
@@ -226,7 +226,9 @@ export default function Services() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              className="bg-white text-red-600 hover:bg-gray-50 px-8 py-4 text-lg font-semibold"
+              variant="secondary"
+              size="lg"
+              className="text-red-600 px-8 py-4 text-lg font-semibold"
               data-testid="button-emergency-call"
             >
               <Phone className="w-5 h-5 mr-2" />
@@ -234,8 +236,9 @@ export default function Services() {
             </Button>
             <Link href="/comfort-club">
               <Button 
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-red-600 px-8 py-4 text-lg font-semibold"
+                variant="ghost"
+                size="lg"
+                className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold"
                 data-testid="button-comfort-club-emergency"
               >
                 Join Comfort Club - No Overtime Charges!

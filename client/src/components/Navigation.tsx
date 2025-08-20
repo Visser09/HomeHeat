@@ -119,7 +119,7 @@ export default function Navigation() {
             </Link>
             
             <Button 
-              className="bg-primary text-white hover:bg-primary-dark transition-colors duration-200"
+              variant="default"
               data-testid="button-book-service"
             >
               Book Service
@@ -161,7 +161,8 @@ export default function Navigation() {
                   </span>
                 </Link>
                 <Button 
-                  className="w-full bg-primary text-white hover:bg-primary-dark transition-colors duration-200 mt-4"
+                  variant="default"
+                  className="w-full mt-4"
                   data-testid="mobile-button-book-service"
                 >
                   Book Service

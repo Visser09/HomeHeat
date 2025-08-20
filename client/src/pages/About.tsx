@@ -28,7 +28,8 @@ export default function About() {
               </p>
               <Link href="/contact">
                 <Button 
-                  className="bg-white text-primary hover:bg-gray-50 px-8 py-4 text-lg font-semibold"
+                  variant="secondary"
+                  size="lg"
                   data-testid="button-contact-us"
                 >
                   <Phone className="w-5 h-5 mr-2" />
@@ -178,7 +179,8 @@ export default function About() {
               </div>
               <Link href="/comfort-club">
                 <Button 
-                  className="bg-primary text-white hover:bg-primary-dark px-8 py-4 text-lg font-semibold"
+                  variant="default"
+                  size="lg"
                   data-testid="button-comfort-club"
                 >
                   Join Our Comfort Club
@@ -223,7 +225,8 @@ export default function About() {
           </div>
           <Link href="/contact">
             <Button 
-              className="bg-white text-primary hover:bg-gray-50 px-8 py-4 text-lg font-semibold"
+              variant="secondary"
+              size="lg"
               data-testid="button-get-in-touch"
             >
               Get In Touch Today

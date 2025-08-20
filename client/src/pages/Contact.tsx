@@ -85,17 +85,19 @@ export default function Contact() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
+                variant="secondary"
+                size="lg"
                 onClick={handleCallNow}
-                className="bg-white text-primary hover:bg-gray-50 px-8 py-4 text-lg font-semibold"
                 data-testid="button-call-now-hero"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Call 613-925-1039
               </Button>
               <Button 
+                variant="ghost"
+                size="lg"
                 onClick={handleEmailUs}
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-semibold"
+                className="border-2 border-white text-white hover:bg-white/10"
                 data-testid="button-email-us-hero"
               >
                 <Mail className="w-5 h-5 mr-2" />
@@ -169,16 +171,18 @@ export default function Contact() {
               {/* Quick Action Buttons */}
               <div className="grid grid-cols-2 gap-4">
                 <Button 
+                  variant="default"
                   onClick={handleCallNow}
-                  className="bg-green-600 text-white hover:bg-green-700 py-4 font-semibold"
+                  className="py-4"
                   data-testid="button-call-now"
                 >
                   <Phone className="w-4 h-4 mr-2" />
                   Call Now
                 </Button>
                 <Button 
+                  variant="default"
                   onClick={handleEmailUs}
-                  className="bg-blue-600 text-white hover:bg-blue-700 py-4 font-semibold"
+                  className="py-4"
                   data-testid="button-email-us"
                 >
                   <Mail className="w-4 h-4 mr-2" />
@@ -274,8 +278,10 @@ export default function Contact() {
                     </div>
                     
                     <Button 
+                      variant="default"
+                      size="lg"
                       type="submit"
-                      className="w-full bg-primary text-white hover:bg-primary-dark py-4 text-lg font-semibold"
+                      className="w-full"
                       data-testid="button-send-message"
                     >
                       <Send className="w-4 h-4 mr-2" />
@@ -304,8 +310,10 @@ export default function Contact() {
             system fails, we're ready to respond quickly - 24 hours a day, 365 days a year.
           </p>
           <Button 
+            variant="secondary"
+            size="lg"
             onClick={handleCallNow}
-            className="bg-white text-red-600 hover:bg-gray-50 px-12 py-4 text-xl font-bold"
+            className="px-12 py-4 text-xl font-bold text-red-600"
             data-testid="button-emergency-call"
           >
             <Phone className="w-6 h-6 mr-3" />

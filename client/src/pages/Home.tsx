@@ -108,7 +108,8 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
-                  className="bg-[#ffffff] text-primary hover:bg-gray-50 transition-colors duration-200 px-8 py-4 text-lg font-semibold"
+                  variant="secondary"
+                  size="lg"
                   data-testid="button-call-now"
                 >
                   <Phone className="w-5 h-5 mr-2" />
@@ -116,8 +117,9 @@ export default function Home() {
                 </Button>
                 <Link href="/services">
                   <Button 
-                    variant="outline" 
-                    className="border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-200 px-8 py-4 text-lg font-semibold bg-[#ffffff05]"
+                    variant="ghost" 
+                    size="lg"
+                    className="border-2 border-white text-white hover:bg-white/10"
                     data-testid="button-view-services"
                   >
                     View Services
@@ -204,7 +206,9 @@ export default function Home() {
               
               <Link href="/comfort-club">
                 <Button 
-                  className="w-full bg-[#007BFF] text-[#ffffff] hover:bg-primary-dark transition-colors duration-200 py-4 text-lg font-semibold"
+                  variant="default"
+                  size="lg"
+                  className="w-full"
                   data-testid="button-join-comfort-club"
                 >
                   Join Comfort Club Today
@@ -242,7 +246,6 @@ export default function Home() {
                   </ul>
                   <Button 
                     variant="link" 
-                    className="text-primary font-semibold hover:text-primary-dark p-0 hover:no-underline"
                     data-testid={`service-learn-more-${index}`}
                   >
                     Learn More →
@@ -255,7 +258,8 @@ export default function Home() {
           <div className="text-center">
             <Link href="/contact">
               <Button 
-                className="bg-primary text-white hover:bg-primary-dark transition-colors duration-200 px-8 py-4 text-lg font-semibold"
+                variant="default"
+                size="lg"
                 data-testid="button-get-quote"
               >
                 Get Free Quote
@@ -339,7 +343,8 @@ export default function Home() {
               
               <Link href="/financing">
                 <Button 
-                  className="bg-white text-primary hover:bg-gray-50 transition-colors duration-200 px-8 py-4 text-lg font-semibold"
+                  variant="secondary"
+                  size="lg"
                   data-testid="button-financing-info"
                 >
                   Learn About Financing
