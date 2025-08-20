@@ -10,6 +10,8 @@ import {
   Phone
 } from "lucide-react";
 
+import _7U2A8064 from "@assets/7U2A8064.jpeg";
+
 export default function About() {
   return (
     <div className="min-h-screen bg-background">
@@ -39,7 +41,7 @@ export default function About() {
             </div>
             <div className="hidden lg:block">
               <img 
-                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
+                src={_7U2A8064} 
                 alt="HVAC technician working professionally" 
                 className="rounded-xl shadow-2xl w-full h-auto"
                 data-testid="about-hero-image"
@@ -48,7 +50,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Our Story */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,7 +89,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Why Choose Us */}
       <section className="py-16 bg-gray-custom">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -153,7 +153,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Our Commitment */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -198,7 +197,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
       {/* Service Area */}
       <section className="py-16 bg-primary-dark text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
