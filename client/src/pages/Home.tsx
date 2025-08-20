@@ -108,7 +108,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
-                  className="bg-white text-primary hover:bg-gray-50 transition-colors duration-200 px-8 py-4 text-lg font-semibold"
+                  className="bg-[#ffffff] text-primary hover:bg-gray-50 transition-colors duration-200 px-8 py-4 text-lg font-semibold"
                   data-testid="button-call-now"
                 >
                   <Phone className="w-5 h-5 mr-2" />
