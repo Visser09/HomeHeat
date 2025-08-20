@@ -204,7 +204,7 @@ export default function Home() {
               
               <Link href="/comfort-club">
                 <Button 
-                  className="w-full bg-primary text-white hover:bg-primary-dark transition-colors duration-200 py-4 text-lg font-semibold"
+                  className="w-full bg-[#0505edf5] text-white hover:bg-primary-dark transition-colors duration-200 py-4 text-lg font-semibold"
                   data-testid="button-join-comfort-club"
                 >
                   Join Comfort Club Today
