@@ -17,7 +17,7 @@ const botResponses: { [key: string]: string } = {
   services:
     "We offer furnace installation/repair, air conditioning, heat pumps, water heaters, indoor air quality solutions, and radiant floor heating. What specific service are you interested in?",
   pricing:
-    "Our pricing varies by service and equipment. We offer free quotes and flexible financing through our SNAP Advantage program. Would you like me to connect you with our team for a personalized quote?",
+    "Our pricing varies by service and equipment. We offer free quotes and flexible financing through our FinanceIt program. Would you like me to connect you with our team for a personalized quote?",
   comfort:
     "Our Comfort Club membership includes priority service, annual maintenance, 25% off parts, no diagnostic fees, and 24/7 phone support starting at $199 for a single system. It's a great way to protect your investment! You can apply on our Comfort Club page.",
   contact:
@@ -25,7 +25,7 @@ const botResponses: { [key: string]: string } = {
   emergency:
     "For emergency service, please call us immediately at 613-925-1039. We provide 24/7 emergency service with no overtime charges for Comfort Club members!",
   financing:
-    "We offer flexible financing through our SNAP Advantage program with low interest rates, quick approval, and terms up to 84 months. No down payment required! Visit our Financing page to learn more or call 613-925-1039.",
+    "We offer flexible financing through our FinanceIt program with competitive rates, quick approval, and terms up to 84 months. No down payment required! Visit our Financing page to learn more or call 613-925-1039.",
   heatpumps:
     "Heat pumps are an energy-efficient solution for year-round heating and cooling! We offer split system heat pumps, packaged units, geothermal systems, and ductless heat pumps. They're perfect for homes with or without existing ductwork. Visit our Services page to learn more!",
   furnaces:
@@ -73,7 +73,7 @@ function getBotResponse(userMessage: string): string {
 
   // Pricing / financing
   if (HAS(m, ["price", "cost", "quote", "estimate", "how much"])) return botResponses.pricing;
-  if (HAS(m, ["financing", "payment", "snap", "finance", "loan"])) return botResponses.financing;
+  if (HAS(m, ["financing", "payment", "financeit", "finance", "loan"])) return botResponses.financing;
 
   // Contact / location
   if (HAS(m, ["contact", "phone", "email", "call", "reach"])) return botResponses.contact;

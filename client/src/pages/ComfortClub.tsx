@@ -213,7 +213,7 @@ export default function ComfortClub() {
 
             <Card className="bg-blue-50 border-blue-200 hover:shadow-lg transition-shadow" data-testid="pricing-double">
               <CardHeader className="text-center pb-2">
-                <CardTitle className="text-2xl font-bold text-blue-700">$299</CardTitle>
+                <CardTitle className="text-2xl font-bold text-blue-700">$369</CardTitle>
                 <p className="text-blue-600 font-medium">Two Systems</p>
               </CardHeader>
               <CardContent className="text-center">

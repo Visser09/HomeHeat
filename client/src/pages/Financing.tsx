@@ -78,7 +78,7 @@ export default function Financing() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight" data-testid="financing-hero-title">
-              The Hometown <span className="text-blue-200">SNAP Advantage</span>
+              The Hometown <span className="text-blue-200">FinanceIt Advantage</span>
             </h1>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto" data-testid="financing-hero-description">
               Don't let budget concerns prevent you from enjoying reliable comfort. 
