@@ -203,7 +203,7 @@ export default function ComfortClub() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <Card className="bg-green-50 border-green-200 hover:shadow-lg transition-shadow" data-testid="pricing-single">
               <CardHeader className="text-center pb-2">
-                <CardTitle className="text-2xl font-bold text-green-700">$199</CardTitle>
+                <CardTitle className="text-2xl font-bold text-green-700">$205</CardTitle>
                 <p className="text-green-600 font-medium">Single System</p>
               </CardHeader>
               <CardContent className="text-center">
