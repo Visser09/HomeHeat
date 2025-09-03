@@ -14,7 +14,7 @@ import {
 
 // Import service images
 import furnaceImage from "@assets/Screenshot 2025-09-03 104128_1756911367408.png";
-import heatPumpImage from "@assets/Screenshot 2025-09-03 104257_1756911367409.png";
+import heatPumpImage from "@assets/heatpumps _1756926164146.png";
 import ductlessOutdoorImage from "@assets/Screenshot 2025-09-03 104412_1756911367409.png";
 import ductlessIndoorImage from "@assets/Screenshot 2025-09-03 104602_1756911367409.png";
 import indoorAirQualityImage from "@assets/Screenshot 2025-09-03 104708_1756911367409.png";
