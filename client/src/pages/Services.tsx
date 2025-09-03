@@ -145,10 +145,10 @@ export default function Services() {
       <section className="py-16 lg:py-24 bg-gradient-to-br from-primary-dark to-primary text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight" data-testid="services-hero-title">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight" data-testid="services-hero-title">
               Complete HVAC Solutions for Your <span className="text-blue-200">Home & Business</span>
             </h1>
-            <p className="text-xl text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto" data-testid="services-hero-description">
+            <p className="text-lg sm:text-xl text-blue-100 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto px-4 sm:px-0" data-testid="services-hero-description">
               From installation to maintenance, we provide comprehensive heating, cooling, 
               and indoor air quality services using only the highest quality equipment and materials.
             </p>
@@ -176,7 +176,7 @@ export default function Services() {
                   <div className={`grid lg:grid-cols-2 gap-0 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                     <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                       {service.secondaryImage ? (
-                        <div className="flex flex-col h-64 lg:h-full">
+                        <div className="flex flex-col h-48 sm:h-64 lg:h-full">
                           <img 
                             src={service.image}
                             alt={`${service.title} outdoor unit`}
@@ -194,27 +194,27 @@ export default function Services() {
                         <img 
                           src={service.image}
                           alt={`${service.title} service`}
-                          className="w-full h-64 lg:h-full object-cover"
+                          className="w-full h-48 sm:h-64 lg:h-full object-cover"
                           data-testid={`service-image-${service.id}`}
                         />
                       )}
                     </div>
                     <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                      <CardContent className="p-8 lg:p-12 h-full flex flex-col justify-center">
-                        <div className="flex items-center mb-6">
-                          <service.icon className="w-12 h-12 text-primary mr-4" />
-                          <CardTitle className="text-3xl font-bold text-primary-dark" data-testid={`service-title-${service.id}`}>
+                      <CardContent className="p-4 sm:p-6 lg:p-8 xl:p-12 h-full flex flex-col justify-center">
+                        <div className="flex items-center mb-4 sm:mb-6">
+                          <service.icon className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-primary mr-3 sm:mr-4 flex-shrink-0" />
+                          <CardTitle className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary-dark" data-testid={`service-title-${service.id}`}>
                             {service.title}
                           </CardTitle>
                         </div>
                         
-                        <p className="text-gray-custom mb-6 text-lg leading-relaxed" data-testid={`service-description-${service.id}`}>
+                        <p className="text-gray-custom mb-4 sm:mb-6 text-base sm:text-lg leading-relaxed" data-testid={`service-description-${service.id}`}>
                           {service.description}
                         </p>
                         
-                        <div className="mb-6">
-                          <h4 className="font-semibold text-primary-dark mb-4">Key Features:</h4>
-                          <div className="grid md:grid-cols-2 gap-2">
+                        <div className="mb-4 sm:mb-6">
+                          <h4 className="font-semibold text-primary-dark mb-3 sm:mb-4 text-sm sm:text-base">Key Features:</h4>
+                          <div className="grid sm:grid-cols-2 gap-2">
                             {service.features.map((feature, fIndex) => (
                               <div key={fIndex} className="flex items-start" data-testid={`service-feature-${service.id}-${fIndex}`}>
                                 <CheckCircle className="text-primary w-4 h-4 mt-1 mr-2 flex-shrink-0" />
@@ -224,8 +224,8 @@ export default function Services() {
                           </div>
                         </div>
                         
-                        <div className="mb-6">
-                          <h4 className="font-semibold text-primary-dark mb-2">Trusted Brands:</h4>
+                        <div className="mb-4 sm:mb-6">
+                          <h4 className="font-semibold text-primary-dark mb-2 text-sm sm:text-base">Trusted Brands:</h4>
                           <p className="text-gray-600 text-sm">
                             {service.brands.join(', ')}
                           </p>
@@ -261,10 +261,10 @@ export default function Services() {
       {/* Emergency Service Banner */}
       <section className="py-16 bg-red-600 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4" data-testid="emergency-service-title">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4" data-testid="emergency-service-title">
             24/7 Emergency Service Available
           </h2>
-          <p className="text-xl text-red-100 mb-8 max-w-3xl mx-auto" data-testid="emergency-service-description">
+          <p className="text-lg sm:text-xl text-red-100 mb-6 sm:mb-8 max-w-3xl mx-auto px-4 sm:px-0" data-testid="emergency-service-description">
             HVAC emergencies don't wait for business hours. When your heating or cooling 
             system fails, our emergency service team is ready to respond quickly.
           </p>
@@ -272,7 +272,7 @@ export default function Services() {
             <Button 
               variant="secondary"
               size="lg"
-              className="text-red-600 px-8 py-4 text-lg font-semibold"
+              className="text-red-600 px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold"
               data-testid="button-emergency-call"
             >
               <Phone className="w-5 h-5 mr-2" />
@@ -282,7 +282,7 @@ export default function Services() {
               <Button 
                 variant="ghost"
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold"
+                className="border-2 border-white text-white hover:bg-white/10 px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-semibold"
                 data-testid="button-comfort-club-emergency"
               >
                 Join Comfort Club - No Overtime Charges!
@@ -296,22 +296,22 @@ export default function Services() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-4" data-testid="why-choose-services-title">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-dark mb-4" data-testid="why-choose-services-title">
               Why Choose Hometown Heating?
             </h2>
-            <p className="text-xl text-gray-custom max-w-3xl mx-auto" data-testid="why-choose-services-description">
+            <p className="text-lg sm:text-xl text-gray-custom max-w-3xl mx-auto px-4 sm:px-0" data-testid="why-choose-services-description">
               Professional installation, quality equipment, and ongoing support ensure 
               your complete satisfaction with every service we provide.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <Card className="text-center hover:shadow-lg transition-shadow" data-testid="service-benefit-1">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="bg-primary-light bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <CheckCircle className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-bold text-lg text-primary-dark mb-2">Quality Guaranteed</h3>
+                <h3 className="font-bold text-base sm:text-lg text-primary-dark mb-2">Quality Guaranteed</h3>
                 <p className="text-gray-custom text-sm">
                   All work backed by our satisfaction guarantee and manufacturer warranties
                 </p>
@@ -319,11 +319,11 @@ export default function Services() {
             </Card>
 
             <Card className="text-center hover:shadow-lg transition-shadow" data-testid="service-benefit-2">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="bg-primary-light bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <Phone className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-bold text-lg text-primary-dark mb-2">Expert Support</h3>
+                <h3 className="font-bold text-base sm:text-lg text-primary-dark mb-2">Expert Support</h3>
                 <p className="text-gray-custom text-sm">
                   Licensed technicians with 30+ years of experience serving Prescott
                 </p>
@@ -331,11 +331,11 @@ export default function Services() {
             </Card>
 
             <Card className="text-center hover:shadow-lg transition-shadow" data-testid="service-benefit-3">
-              <CardContent className="p-6">
+              <CardContent className="p-4 sm:p-6">
                 <div className="bg-primary-light bg-opacity-10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <Droplet className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-bold text-lg text-primary-dark mb-2">Transparent Pricing</h3>
+                <h3 className="font-bold text-base sm:text-lg text-primary-dark mb-2">Transparent Pricing</h3>
                 <p className="text-gray-custom text-sm">
                   Honest, upfront pricing with no hidden fees or surprises
                 </p>
