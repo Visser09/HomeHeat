@@ -125,7 +125,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
       {/* Contact Information & Form */}
       <section className="py-16 bg-gray-custom">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -156,7 +155,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-primary-dark">Email</h3>
-                        <p className="text-gray-custom">info@hometownheating.ca</p>
+                        <p className="text-gray-custom">tom@hometownheating.ca</p>
                         <p className="text-sm text-gray-600">We respond within 2 hours</p>
                       </div>
                     </div>
@@ -317,7 +316,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-
       {/* Emergency Service Banner */}
       <section className="py-16 bg-red-600 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -343,7 +341,6 @@ export default function Contact() {
           </p>
         </div>
       </section>
-
       {/* Service Area Map */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
