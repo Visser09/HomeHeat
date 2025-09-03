@@ -12,6 +12,8 @@ import {
 
 import _7U2A8064 from "@assets/7U2A8064.jpeg";
 
+import thomas_pearl_randy from "@assets/thomas,pearl.randy.jpg";
+
 export default function About() {
   return (
     <div className="min-h-screen bg-background">
@@ -188,7 +190,7 @@ export default function About() {
             </div>
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
+                src={thomas_pearl_randy} 
                 alt="Professional team handshake" 
                 className="rounded-xl shadow-lg w-full h-auto"
                 data-testid="commitment-image"
