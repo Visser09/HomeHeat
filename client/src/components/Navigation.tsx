@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Phone, Mail, MapPin, Menu, ChevronDown } from "lucide-react";
+import { Phone, Mail, MapPin, Menu } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const services = [
@@ -14,17 +14,11 @@ const services = [
   { name: "Radiant Floor Heating", path: "/services#radiant" },
 ];
 
-const servicePlans = [
-  { name: "Basic Plan", path: "/comfort-club#basic-plan" },
-  { name: "Comfort Club", path: "/comfort-club#comfort-club" },
-  { name: "110 Plan", path: "/comfort-club#110-plan" },
-];
 
 export default function Navigation() {
   const [location] = useLocation();
   const isMobile = useIsMobile();
   const [showServices, setShowServices] = useState(false);
-  const [showServicePlans, setShowServicePlans] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
@@ -83,31 +77,13 @@ export default function Navigation() {
               </span>
             </Link>
             
-            <div 
-              className="relative group"
-              onMouseEnter={() => setShowServicePlans(true)}
-              onMouseLeave={() => setShowServicePlans(false)}
-            >
-              <Link href="/comfort-club" data-testid="nav-service-plans">
-                <span className={`transition-colors font-medium flex items-center ${
-                  location === "/comfort-club" ? "text-primary" : "text-gray-custom hover:text-primary"
-                }`}>
-                  Service Plans <ChevronDown className="ml-1 w-3 h-3" />
-                </span>
-              </Link>
-              
-              {showServicePlans && (
-                <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 z-50">
-                  {servicePlans.map((plan) => (
-                    <Link key={plan.name} href={plan.path} data-testid={`nav-plan-${plan.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                      <span className="block px-4 py-2 text-gray-custom hover:bg-gray-50 transition-colors">
-                        {plan.name}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+            <Link href="/comfort-club" data-testid="nav-service-plans">
+              <span className={`transition-colors font-medium ${
+                location === "/comfort-club" ? "text-primary" : "text-gray-custom hover:text-primary"
+              }`}>
+                Service Plans
+              </span>
+            </Link>
             
             <Link href="/about" data-testid="nav-about">
               <span className={`transition-colors font-medium ${
