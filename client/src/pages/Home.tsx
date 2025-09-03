@@ -193,7 +193,7 @@ export default function Home() {
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 <Card className="bg-green-50 border-green-200">
                   <CardContent className="p-4 text-center">
-                    <div className="text-2xl font-bold text-green-700" data-testid="pricing-single">$199</div>
+                    <div className="text-2xl font-bold text-green-700" data-testid="pricing-single">$205</div>
                     <div className="text-sm text-green-600">Single System</div>
                   </CardContent>
                 </Card>
