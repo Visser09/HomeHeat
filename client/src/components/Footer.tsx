@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Footer() {
   return (
-    <footer className="hth-footer relative z-50 bg-primary-dark text-white py-12">
+    <footer className="hth-footer relative z-50 bg-neutral-900 border-t border-white/10 py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
