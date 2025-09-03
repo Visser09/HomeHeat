@@ -16,6 +16,8 @@ import thomas_pearl_randy from "@assets/thomas,pearl.randy.jpg";
 
 import pearl_randy_thomas from "@assets/pearl-randy-thomas.jpg";
 
+import randy_in_truck_2 from "@assets/randy-in-truck.2.jpg";
+
 export default function About() {
   return (
     <div className="min-h-screen bg-background">
@@ -45,7 +47,7 @@ export default function About() {
             </div>
             <div className="hidden lg:block">
               <img 
-                src={_7U2A8064} 
+                src={randy_in_truck_2} 
                 alt="HVAC technician working professionally" 
                 className="rounded-xl shadow-2xl w-full h-auto"
                 data-testid="about-hero-image"
