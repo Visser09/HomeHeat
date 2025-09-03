@@ -108,7 +108,6 @@ export default function Financing() {
           </div>
         </div>
       </section>
-
       {/* Financing Benefits */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -140,7 +139,6 @@ export default function Financing() {
           </div>
         </div>
       </section>
-
       {/* Quick Facts */}
       <section className="py-16 bg-gray-custom">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -177,7 +175,7 @@ export default function Financing() {
 
             <Card className="text-center hover:shadow-lg transition-shadow" data-testid="fact-terms">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-primary mb-2">84</div>
+                <div className="text-4xl font-bold text-primary mb-2">12</div>
                 <div className="text-lg font-semibold text-primary-dark mb-2">Month Terms</div>
                 <p className="text-sm text-gray-600">Extended payment options available</p>
               </CardContent>
@@ -185,7 +183,6 @@ export default function Financing() {
           </div>
         </div>
       </section>
-
       {/* Financing Options */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -239,7 +236,6 @@ export default function Financing() {
           </div>
         </div>
       </section>
-
       {/* Why Finance Your HVAC */}
       <section className="py-16 bg-primary-dark text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -294,7 +290,6 @@ export default function Financing() {
           </div>
         </div>
       </section>
-
       {/* Call to Action */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
