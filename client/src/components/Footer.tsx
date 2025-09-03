@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="font-brand text-2xl font-bold mb-4">
               HOMETOWN HEATING
             </div>
-            <p className="text-gray-100 font-semibold mb-6 max-w-md">
+            <p className="text-white font-bold mb-6 max-w-md">
               Your trusted HVAC professionals serving Prescott, Ontario for over 30 years. 
               Quality service, reliable comfort, guaranteed satisfaction.
             </p>
@@ -21,7 +21,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="font-semibold text-lg mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-100 font-semibold">
+            <ul className="space-y-2 text-white font-bold">
               <li>
                 <Link href="/services#furnaces" data-testid="footer-link-furnaces">
                   <span className="hover:text-blue-200 transition-colors">Furnaces</span>
@@ -58,7 +58,7 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="font-semibold text-lg mb-4">Contact</h4>
-            <div className="space-y-3 text-gray-100 font-semibold">
+            <div className="space-y-3 text-white font-bold">
               <div className="flex items-center" data-testid="footer-phone">
                 <Phone className="w-4 h-4 mr-3" />
                 <span>613-925-1039</span>
@@ -77,17 +77,17 @@ export default function Footer() {
         
         {/* Bottom Bar */}
         <div className="border-t border-blue-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-gray-100 font-semibold text-sm" data-testid="footer-copyright">
+          <div className="text-white font-bold text-sm" data-testid="footer-copyright">
             © 2024 Hometown Heating Inc. All rights reserved.
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" data-testid="footer-link-privacy">
-              <span className="text-gray-100 font-semibold text-sm hover:text-blue-200 transition-colors">
+              <span className="text-white font-bold text-sm hover:text-blue-300 transition-colors">
                 Privacy Policy
               </span>
             </Link>
             <Link href="/terms" data-testid="footer-link-terms">
-              <span className="text-gray-100 font-semibold text-sm hover:text-blue-200 transition-colors">
+              <span className="text-white font-bold text-sm hover:text-blue-300 transition-colors">
                 Terms of Service
               </span>
             </Link>
