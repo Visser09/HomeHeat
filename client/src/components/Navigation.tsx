@@ -68,31 +68,13 @@ export default function Navigation() {
               </span>
             </Link>
             
-            <div 
-              className="relative group"
-              onMouseEnter={() => setShowServices(true)}
-              onMouseLeave={() => setShowServices(false)}
-            >
-              <Link href="/services" data-testid="nav-services">
-                <span className={`transition-colors font-medium flex items-center ${
-                  location === "/services" ? "text-primary" : "text-gray-custom hover:text-primary"
-                }`}>
-                  Services <ChevronDown className="ml-1 w-3 h-3" />
-                </span>
-              </Link>
-              
-              {showServices && (
-                <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 z-50">
-                  {services.map((service) => (
-                    <Link key={service.name} href={service.path} data-testid={`nav-service-${service.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                      <span className="block px-4 py-2 text-gray-custom hover:bg-gray-50 transition-colors">
-                        {service.name}
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+            <Link href="/services" data-testid="nav-products">
+              <span className={`transition-colors font-medium ${
+                location === "/services" ? "text-primary" : "text-gray-custom hover:text-primary"
+              }`}>
+                Products
+              </span>
+            </Link>
             
             <Link href="/comfort-club" data-testid="nav-comfort-club">
               <span className={`transition-colors font-medium ${
@@ -142,9 +124,9 @@ export default function Navigation() {
                     Home
                   </span>
                 </Link>
-                <Link href="/services" data-testid="mobile-nav-services">
+                <Link href="/services" data-testid="mobile-nav-products">
                   <span className="block py-3 text-gray-custom hover:text-primary transition-colors">
-                    Services
+                    Products
                   </span>
                 </Link>
                 <Link href="/comfort-club" data-testid="mobile-nav-comfort-club">

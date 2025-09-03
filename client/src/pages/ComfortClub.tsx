@@ -207,7 +207,7 @@ export default function ComfortClub() {
                 <p className="text-green-600 font-medium">Single System</p>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-sm text-gray-600">Perfect for homes with one heating or cooling system</p>
+                <p className="text-sm text-gray-600">Perfect for homes with one heating system</p>
               </CardContent>
             </Card>
 
