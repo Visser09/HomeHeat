@@ -118,12 +118,14 @@ export default function Navigation() {
               </span>
             </Link>
             
-            <Button 
-              variant="default"
-              data-testid="button-book-service"
-            >
-              Book Service
-            </Button>
+            <Link href="/contact">
+              <Button 
+                variant="default"
+                data-testid="button-book-service"
+              >
+                Book Service
+              </Button>
+            </Link>
           </div>
           
           {/* Mobile Menu Button */}
@@ -160,13 +162,15 @@ export default function Navigation() {
                     Contact
                   </span>
                 </Link>
-                <Button 
-                  variant="default"
-                  className="w-full mt-4"
-                  data-testid="mobile-button-book-service"
-                >
-                  Book Service
-                </Button>
+                <Link href="/contact">
+                  <Button 
+                    variant="default"
+                    className="w-full mt-4"
+                    data-testid="mobile-button-book-service"
+                  >
+                    Book Service
+                  </Button>
+                </Link>
               </div>
             </SheetContent>
           </Sheet>
