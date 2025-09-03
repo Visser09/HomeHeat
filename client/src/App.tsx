@@ -7,7 +7,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Services from "@/pages/Services";
-import ComfortClub from "@/pages/ComfortClub";
+import ServicePlans from "@/pages/ServicePlans";
 import Contact from "@/pages/Contact";
 import Financing from "@/pages/Financing";
 import Navigation from "@/components/Navigation";
@@ -22,7 +22,7 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/services" component={Services} />
-        <Route path="/comfort-club" component={ComfortClub} />
+        <Route path="/comfort-club" component={ServicePlans} />
         <Route path="/contact" component={Contact} />
         <Route path="/financing" component={Financing} />
         <Route component={NotFound} />
