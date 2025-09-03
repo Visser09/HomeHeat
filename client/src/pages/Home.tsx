@@ -357,7 +357,7 @@ export default function Home() {
                   </h3>
                   <div className="grid grid-cols-2 gap-6">
                     <div data-testid="financing-fact-approval-rate">
-                      <div className="text-3xl font-bold text-blue-200">Fast</div>
+                      <div className="text-3xl font-bold text-blue-200">100%</div>
                       <div className="text-sm">Approval Process</div>
                     </div>
                     <div data-testid="financing-fact-approval">
