@@ -317,7 +317,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6" data-testid="financing-title">
-                The Hometown SNAP Advantage
+                The Hometown FinanceIt Advantage
               </h2>
               <p className="text-xl text-blue-100 mb-8" data-testid="financing-description">
                 Don't let budget concerns prevent you from enjoying reliable comfort. 
@@ -326,11 +326,11 @@ export default function Home() {
               
               <div className="space-y-4 mb-8">
                 {[
-                  "Low interest rates - significantly lower than credit cards",
                   "Flexible monthly payments tailored to your budget",
                   "No penalties for early payoff",
                   "Preserve your cash reserves for emergencies",
-                  "Add value to your home with energy-efficient systems"
+                  "Add value to your home with energy-efficient systems",
+                  "Quick and easy application process"
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-start" data-testid={`financing-benefit-${index}`}>
                     <CheckCircle className="text-blue-200 mt-1 mr-3 w-5 h-5 flex-shrink-0" />
@@ -356,9 +356,9 @@ export default function Home() {
                     Quick Financing Facts
                   </h3>
                   <div className="grid grid-cols-2 gap-6">
-                    <div data-testid="financing-fact-interest">
-                      <div className="text-3xl font-bold text-blue-200">0%</div>
-                      <div className="text-sm">Interest Options Available</div>
+                    <div data-testid="financing-fact-approval-rate">
+                      <div className="text-3xl font-bold text-blue-200">Fast</div>
+                      <div className="text-sm">Approval Process</div>
                     </div>
                     <div data-testid="financing-fact-approval">
                       <div className="text-3xl font-bold text-blue-200">24hrs</div>
