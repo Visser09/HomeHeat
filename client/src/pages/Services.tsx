@@ -12,6 +12,16 @@ import {
   CheckCircle
 } from "lucide-react";
 
+// Import service images
+import furnaceImage from "@assets/Screenshot 2025-09-03 104128_1756911367408.png";
+import heatPumpImage from "@assets/Screenshot 2025-09-03 104257_1756911367409.png";
+import ductlessOutdoorImage from "@assets/Screenshot 2025-09-03 104412_1756911367409.png";
+import ductlessIndoorImage from "@assets/Screenshot 2025-09-03 104602_1756911367409.png";
+import indoorAirQualityImage from "@assets/Screenshot 2025-09-03 104708_1756911367409.png";
+import radiantFloorImage from "@assets/Screenshot 2025-09-03 105041_1756911367409.png";
+import waterHeaterImage from "@assets/tankless_1756911377281.png";
+import airConditioningImage from "@assets/Screenshot 2025-09-03 104018_1756911384668.png";
+
 const services = [
   {
     id: "furnaces",
@@ -27,23 +37,7 @@ const services = [
       "Financing available"
     ],
     brands: ["Carrier", "Bryant", "Lennox"],
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
-  },
-  {
-    id: "ac",
-    icon: Snowflake,
-    title: "Air Conditioning",
-    description: "Stay cool with our central air conditioning systems and ductless mini-splits. Energy-efficient solutions for ultimate summer comfort.",
-    features: [
-      "Central AC systems",
-      "Ductless mini-split installations",
-      "Energy Star certified models",
-      "Professional maintenance programs",
-      "Indoor air quality integration",
-      "Smart thermostat compatibility"
-    ],
-    brands: ["Carrier", "Bryant", "Mitsubishi"],
-    image: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+    image: furnaceImage
   },
   {
     id: "heat-pumps",
@@ -59,23 +53,24 @@ const services = [
       "Variable speed technology"
     ],
     brands: ["Carrier", "WaterFurnace", "Bryant"],
-    image: "https://images.unsplash.com/photo-1609547135293-95aebdb4b72c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+    image: heatPumpImage
   },
   {
-    id: "water-heaters",
-    icon: Droplet,
-    title: "Water Heaters",
-    description: "Reliable hot water solutions including traditional tanks and energy-efficient tankless systems for endless hot water.",
+    id: "ductless-split",
+    icon: Wind,
+    title: "Ductless Split Systems",
+    description: "Efficient zone-based heating and cooling with ductless mini-split systems. Perfect for room additions, older homes, or targeted comfort control.",
     features: [
-      "Traditional tank water heaters",
-      "Tankless on-demand systems",
-      "15-year warranty options available",
-      "Space-saving compact designs",
-      "Gas and electric models",
-      "Energy-efficient operation"
+      "Individual zone control for each room",
+      "Energy-efficient operation",
+      "Quiet indoor and outdoor units",
+      "No ductwork required - easy installation",
+      "Both heating and cooling capabilities",
+      "Smart home integration available"
     ],
-    brands: ["A.O. Smith", "Bradford White", "Rinnai"],
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+    brands: ["Carrier", "Mitsubishi", "Daikin"],
+    image: ductlessOutdoorImage,
+    secondaryImage: ductlessIndoorImage
   },
   {
     id: "indoor-air",
@@ -91,7 +86,7 @@ const services = [
       "Duct cleaning services"
     ],
     brands: ["Carrier", "Honeywell", "Lennox"],
-    image: "https://images.unsplash.com/photo-1624191979351-5f5e1df7fdc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+    image: indoorAirQualityImage
   },
   {
     id: "radiant",
@@ -107,7 +102,39 @@ const services = [
       "Programmable thermostats"
     ],
     brands: ["Warmup", "HeatTech", "Uponor"],
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+    image: radiantFloorImage
+  },
+  {
+    id: "water-heaters",
+    icon: Droplet,
+    title: "Water Heaters",
+    description: "Reliable hot water solutions including traditional tanks and energy-efficient tankless systems for endless hot water.",
+    features: [
+      "Traditional tank water heaters",
+      "Tankless on-demand systems",
+      "15-year warranty options available",
+      "Space-saving compact designs",
+      "Gas and electric models",
+      "Energy-efficient operation"
+    ],
+    brands: ["A.O. Smith", "Bradford White", "Rinnai"],
+    image: waterHeaterImage
+  },
+  {
+    id: "ac",
+    icon: Snowflake,
+    title: "Air Conditioning",
+    description: "Stay cool with our central air conditioning systems. Energy-efficient solutions for ultimate summer comfort.",
+    features: [
+      "Central AC systems",
+      "Energy Star certified models",
+      "Professional maintenance programs",
+      "Indoor air quality integration",
+      "Smart thermostat compatibility",
+      "Variable speed technology"
+    ],
+    brands: ["Carrier", "Bryant", "Lennox"],
+    image: airConditioningImage
   }
 ];
 
@@ -148,12 +175,29 @@ export default function Services() {
                 <Card className="overflow-hidden shadow-xl" data-testid={`service-${service.id}`}>
                   <div className={`grid lg:grid-cols-2 gap-0 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
                     <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                      <img 
-                        src={service.image}
-                        alt={`${service.title} service`}
-                        className="w-full h-64 lg:h-full object-cover"
-                        data-testid={`service-image-${service.id}`}
-                      />
+                      {service.secondaryImage ? (
+                        <div className="grid grid-cols-2 gap-2 h-64 lg:h-full">
+                          <img 
+                            src={service.image}
+                            alt={`${service.title} outdoor unit`}
+                            className="w-full h-full object-cover"
+                            data-testid={`service-image-${service.id}-primary`}
+                          />
+                          <img 
+                            src={service.secondaryImage}
+                            alt={`${service.title} indoor unit`}
+                            className="w-full h-full object-cover"
+                            data-testid={`service-image-${service.id}-secondary`}
+                          />
+                        </div>
+                      ) : (
+                        <img 
+                          src={service.image}
+                          alt={`${service.title} service`}
+                          className="w-full h-64 lg:h-full object-cover"
+                          data-testid={`service-image-${service.id}`}
+                        />
+                      )}
                     </div>
                     <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                       <CardContent className="p-8 lg:p-12 h-full flex flex-col justify-center">
