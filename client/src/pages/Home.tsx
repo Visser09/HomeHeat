@@ -19,6 +19,8 @@ import {
   Settings
 } from "lucide-react";
 
+import Screenshot_2025_09_03_103452 from "@assets/Screenshot 2025-09-03 103452.png";
+
 const services = [
   {
     icon: Flame,
@@ -129,7 +131,7 @@ export default function Home() {
             </div>
             <div className="hidden lg:block">
               <img 
-                src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
+                src={Screenshot_2025_09_03_103452} 
                 alt="Professional HVAC technician at work" 
                 className="rounded-xl shadow-2xl w-full h-auto"
                 data-testid="hero-image"
@@ -140,7 +142,6 @@ export default function Home() {
         
         
       </section>
-
       {/* Comfort Club Feature */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -218,7 +219,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Services Section */}
       <section className="py-16 bg-gray-custom">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -268,7 +268,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Trust Indicators */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -312,7 +311,6 @@ export default function Home() {
           </Card>
         </div>
       </section>
-
       {/* Financing Section */}
       <section className="py-16 bg-gradient-to-r from-primary to-primary-dark text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
