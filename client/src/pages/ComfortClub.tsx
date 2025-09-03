@@ -18,6 +18,8 @@ import {
   Award
 } from "lucide-react";
 
+import spencer_AC from "@assets/spencer-AC.jpg";
+
 const benefits = [
   {
     icon: Star,
@@ -137,7 +139,6 @@ export default function ComfortClub() {
           </div>
         </div>
       </section>
-
       {/* Benefits Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -169,7 +170,6 @@ export default function ComfortClub() {
           </div>
         </div>
       </section>
-
       {/* Pricing Section */}
       <section className="py-16 bg-gray-custom">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -234,7 +234,6 @@ export default function ComfortClub() {
           </div>
         </div>
       </section>
-
       {/* What's Included */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -266,7 +265,7 @@ export default function ComfortClub() {
             </div>
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                src={spencer_AC} 
                 alt="HVAC maintenance service" 
                 className="rounded-xl shadow-lg w-full h-auto"
                 data-testid="maintenance-image"
@@ -275,7 +274,6 @@ export default function ComfortClub() {
           </div>
         </div>
       </section>
-
       {/* Application Form */}
       <section id="application-form" className="py-16 bg-gray-custom">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -405,7 +403,6 @@ export default function ComfortClub() {
           </Card>
         </div>
       </section>
-
       {/* Testimonials */}
       <section className="py-16 bg-primary-dark text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
