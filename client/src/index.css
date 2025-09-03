@@ -101,3 +101,13 @@
     color: hsl(var(--text-gray));
   }
 }
+
+/* Footer visibility safety net */
+.hth-footer, .hth-footer * {
+  color:#fff !important;
+  opacity:1 !important;
+  mix-blend-mode:normal !important;
+}
+.hth-footer a:hover { 
+  text-decoration: underline; 
+}
