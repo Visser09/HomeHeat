@@ -36,7 +36,7 @@ export default function Navigation() {
             </div>
             <div className="flex items-center text-primary">
               <Mail className="w-4 h-4 mr-2" />
-              <span data-testid="email-header">info@hometownheating.ca</span>
+              <span data-testid="email-header">visser@hometownheating.ca</span>
             </div>
             <div className="flex items-center text-gray-custom">
               <MapPin className="w-4 h-4 mr-2" />
