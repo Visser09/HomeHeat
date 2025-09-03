@@ -15,8 +15,8 @@ import {
 const financingBenefits = [
   {
     icon: DollarSign,
-    title: "Low Interest Rates",
-    description: "Significantly lower rates than credit cards - save money on your investment"
+    title: "Competitive Rates",
+    description: "Affordable payment options that fit your budget and financial goals"
   },
   {
     icon: Clock,
@@ -47,13 +47,13 @@ const financingBenefits = [
 
 const financingOptions = [
   {
-    title: "0% Interest",
+    title: "Short Term",
     term: "12 Months",
     description: "Perfect for smaller projects and repairs",
     highlight: true
   },
   {
-    title: "Low Rate",
+    title: "Standard Term",
     term: "24-60 Months",
     description: "Great for system replacements and upgrades",
     highlight: false
@@ -114,7 +114,7 @@ export default function Financing() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-4" data-testid="benefits-title">
-              Why Choose SNAP Advantage Financing?
+              Why Choose FinanceIt Financing?
             </h2>
             <p className="text-xl text-gray-custom max-w-3xl mx-auto" data-testid="benefits-description">
               Flexible payment options designed to fit your budget while getting you the comfort you deserve
@@ -151,11 +151,11 @@ export default function Financing() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center hover:shadow-lg transition-shadow" data-testid="fact-interest">
+            <Card className="text-center hover:shadow-lg transition-shadow" data-testid="fact-options">
               <CardContent className="p-6">
-                <div className="text-4xl font-bold text-primary mb-2">0%</div>
-                <div className="text-lg font-semibold text-primary-dark mb-2">Interest Options</div>
-                <p className="text-sm text-gray-600">Available for qualified buyers on select terms</p>
+                <div className="text-4xl font-bold text-primary mb-2">100%</div>
+                <div className="text-lg font-semibold text-primary-dark mb-2">Financing Available</div>
+                <p className="text-sm text-gray-600">Complete financing solutions for all your HVAC needs</p>
               </CardContent>
             </Card>
 
