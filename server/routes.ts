@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactInquirySchema, insertComfortClubApplicationSchema } from "@shared/schema";
+import { sendContactInquiryEmail, sendComfortClubApplicationEmail } from "./email";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -10,6 +11,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertContactInquirySchema.parse(req.body);
       const inquiry = await storage.createContactInquiry(validatedData);
+      
+      // Send email notification
+      try {
+        await sendContactInquiryEmail(inquiry);
+      } catch (emailError) {
+        console.error("Error sending contact inquiry email:", emailError);
+        // Don't fail the request if email fails
+      }
+      
       res.json({ success: true, id: inquiry.id });
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -47,6 +57,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertComfortClubApplicationSchema.parse(req.body);
       const application = await storage.createComfortClubApplication(validatedData);
+      
+      // Send email notification
+      try {
+        await sendComfortClubApplicationEmail(application);
+      } catch (emailError) {
+        console.error("Error sending Comfort Club application email:", emailError);
+        // Don't fail the request if email fails
+      }
+      
       res.json({ success: true, id: application.id });
     } catch (error) {
       if (error instanceof z.ZodError) {

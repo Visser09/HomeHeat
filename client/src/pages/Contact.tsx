@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
 import { 
   Phone, 
   Mail, 
@@ -17,6 +18,7 @@ import {
 
 export default function Contact() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -33,7 +35,7 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -45,21 +47,37 @@ export default function Contact() {
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Message Sent!",
-      description: "We'll respond to your inquiry within 2 hours during business hours.",
-    });
+    setIsSubmitting(true);
     
-    // Reset form
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      service: '',
-      message: ''
-    });
+    try {
+      const response = await apiRequest("POST", "/api/contact", formData);
+      
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "We'll respond to your inquiry within 2 hours during business hours.",
+        });
+        
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or call us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleCallNow = () => {
@@ -282,10 +300,11 @@ export default function Contact() {
                       size="lg"
                       type="submit"
                       className="w-full"
+                      disabled={isSubmitting}
                       data-testid="button-send-message"
                     >
                       <Send className="w-4 h-4 mr-2" />
-                      Send Message
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                     
                     <p className="text-sm text-gray-600 text-center">

@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
 import { Link } from "wouter";
 import { 
   CheckCircle, 
@@ -55,6 +56,7 @@ const benefits = [
 
 export default function ComfortClub() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -73,7 +75,7 @@ export default function ComfortClub() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -85,23 +87,39 @@ export default function ComfortClub() {
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Application Submitted!",
-      description: "We'll contact you within 24 hours to finalize your Comfort Club membership.",
-    });
+    setIsSubmitting(true);
     
-    // Reset form
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      address: '',
-      systemCount: '',
-      systemTypes: '',
-      message: ''
-    });
+    try {
+      const response = await apiRequest("POST", "/api/comfort-club", formData);
+      
+      if (response.ok) {
+        toast({
+          title: "Application Submitted!",
+          description: "We'll contact you within 24 hours to finalize your Comfort Club membership.",
+        });
+        
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          address: '',
+          systemCount: '',
+          systemTypes: '',
+          message: ''
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting Comfort Club application:", error);
+      toast({
+        title: "Error",
+        description: "Failed to submit application. Please try again or call us at 613-925-1039.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -390,9 +408,10 @@ export default function ComfortClub() {
                     size="lg"
                     type="submit"
                     className="px-12"
+                    disabled={isSubmitting}
                     data-testid="button-submit-application"
                   >
-                    Submit Application
+                    {isSubmitting ? "Submitting..." : "Submit Application"}
                   </Button>
                   <p className="text-sm text-gray-600 mt-4">
                     We'll contact you within 24 hours to schedule your first maintenance visit
