@@ -14,6 +14,8 @@ import _7U2A8064 from "@assets/7U2A8064.jpeg";
 
 import thomas_pearl_randy from "@assets/thomas,pearl.randy.jpg";
 
+import pearl_randy_thomas from "@assets/pearl-randy-thomas.jpg";
+
 export default function About() {
   return (
     <div className="min-h-screen bg-background">
@@ -58,7 +60,7 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
+                src={pearl_randy_thomas} 
                 alt="Professional HVAC team" 
                 className="rounded-xl shadow-lg w-full h-auto"
                 data-testid="our-story-image"
