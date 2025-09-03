@@ -336,9 +336,7 @@ export default function Contact() {
             <Phone className="w-6 h-6 mr-3" />
             Emergency: 613-925-1039
           </Button>
-          <p className="text-sm text-red-100 mt-4">
-            No overtime charges for Comfort Club members!
-          </p>
+          <p className="text-sm text-red-100 mt-4">No overtime charges for 110 Plan members!</p>
         </div>
       </section>
       {/* Service Area Map */}
