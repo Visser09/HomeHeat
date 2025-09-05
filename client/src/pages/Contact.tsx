@@ -209,7 +209,7 @@ export default function Contact() {
             </div>
             
             {/* Contact Form */}
-            <div>
+            <div id="quote-form">
               <Card className="shadow-lg">
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold text-primary-dark mb-6" data-testid="contact-form-title">
