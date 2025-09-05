@@ -178,12 +178,6 @@ export default function Services() {
                       {service.secondaryImage ? (
                         <div className="flex flex-col h-48 sm:h-64 lg:h-full">
                           
-                          <img 
-                            src={service.secondaryImage}
-                            alt={`${service.title} indoor unit`}
-                            className="w-full h-1/3 object-cover"
-                            data-testid={`service-image-${service.id}-secondary`}
-                          />
                         </div>
                       ) : (
                         <img 
