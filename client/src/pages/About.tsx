@@ -204,32 +204,32 @@ export default function About() {
         </div>
       </section>
       {/* Service Area */}
-      <section className="py-16 bg-primary-dark text-white">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6" data-testid="service-area-title">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-gray-900" data-testid="service-area-title">
             Proudly Serving Prescott, Ontario
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto" data-testid="service-area-description">
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto" data-testid="service-area-description">
             Located in the heart of Prescott, we're perfectly positioned to serve our 
             community and surrounding areas with fast, reliable HVAC services.
           </p>
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div data-testid="service-area-phone">
-              <h3 className="font-semibold text-lg mb-2">Phone</h3>
-              <p className="text-blue-100">613-925-1039</p>
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">Phone</h3>
+              <p className="text-gray-600">613-925-1039</p>
             </div>
             <div data-testid="service-area-email">
-              <h3 className="font-semibold text-lg mb-2">Email</h3>
-              <p className="text-blue-100">tom@hometownheating.ca</p>
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">Email</h3>
+              <p className="text-gray-600">tom@hometownheating.ca</p>
             </div>
             <div data-testid="service-area-location">
-              <h3 className="font-semibold text-lg mb-2">Location</h3>
-              <p className="text-blue-100">Prescott, Ontario</p>
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">Location</h3>
+              <p className="text-gray-600">Prescott, Ontario</p>
             </div>
           </div>
           <Link href="/contact">
             <Button 
-              variant="secondary"
+              variant="default"
               size="lg"
               data-testid="button-get-in-touch"
             >
