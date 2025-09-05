@@ -16,7 +16,7 @@ import {
 import furnaceImage from "@assets/Screenshot 2025-09-03 104128_1756911367408.png";
 import heatPumpImage from "@assets/heatpumps _1756926164146.png";
 import ductlessOutdoorImage from "@assets/Screenshot 2025-09-03 104412_1756911367409.png";
-import ductlessIndoorImage from "@assets/Screenshot 2025-09-05 at 4.18.45 PM_1757103529900.png";
+import ductlessIndoorImage from "@assets/ductless-indoor-unit.png";
 import indoorAirQualityImage from "@assets/Screenshot 2025-09-03 104708_1756911367409.png";
 import radiantFloorImage from "@assets/Screenshot 2025-09-03 105041_1756911367409.png";
 import waterHeaterImage from "@assets/tankless_1756911377281.png";
