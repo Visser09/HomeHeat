@@ -129,85 +129,6 @@ export default function Contact() {
       <section className="py-16 bg-gray-custom">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
-            <div>
-              <Card className="shadow-lg mb-8">
-                <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold text-primary-dark mb-6" data-testid="contact-info-title">
-                    Contact Information
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div className="flex items-start" data-testid="contact-phone">
-                      <div className="bg-primary-light bg-opacity-10 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
-                        <Phone className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-primary-dark">Phone</h3>
-                        <p className="text-gray-custom">613-925-1039</p>
-                        <p className="text-sm text-gray-600">24/7 Emergency Service</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start" data-testid="contact-email">
-                      <div className="bg-primary-light bg-opacity-10 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
-                        <Mail className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-primary-dark">Email</h3>
-                        <p className="text-gray-custom">tom@hometownheating.ca</p>
-                        <p className="text-sm text-gray-600">We respond within 2 hours</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start" data-testid="contact-location">
-                      <div className="bg-primary-light bg-opacity-10 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-primary-dark">Service Area</h3>
-                        <p className="text-gray-custom">Prescott, Ontario</p>
-                        <p className="text-sm text-gray-600">And surrounding communities</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start" data-testid="contact-hours">
-                      <div className="bg-primary-light bg-opacity-10 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
-                        <Clock className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-primary-dark">Business Hours</h3>
-                        <p className="text-gray-custom">Monday - Friday: 8:00 AM - 4:00 PM</p>
-                        <p className="text-sm text-gray-600">Emergency service available 24/7</p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              {/* Quick Action Buttons */}
-              <div className="grid grid-cols-2 gap-4">
-                <Button 
-                  variant="default"
-                  onClick={handleCallNow}
-                  className="py-4"
-                  data-testid="button-call-now"
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Call Now
-                </Button>
-                <Button 
-                  variant="default"
-                  onClick={handleEmailUs}
-                  className="py-4"
-                  data-testid="button-email-us"
-                >
-                  <Mail className="w-4 h-4 mr-2" />
-                  Email Us
-                </Button>
-              </div>
-            </div>
-            
             {/* Contact Form */}
             <section id="quote-form" className="anchor-target">
               <Card className="shadow-lg">
@@ -313,6 +234,85 @@ export default function Contact() {
                 </CardContent>
               </Card>
             </section>
+            
+            {/* Contact Information */}
+            <div>
+              <Card className="shadow-lg mb-8">
+                <CardContent className="p-8">
+                  <h2 className="text-2xl font-bold text-primary-dark mb-6" data-testid="contact-info-title">
+                    Contact Information
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div className="flex items-start" data-testid="contact-phone">
+                      <div className="bg-primary-light bg-opacity-10 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
+                        <Phone className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-primary-dark">Phone</h3>
+                        <p className="text-gray-custom">613-925-1039</p>
+                        <p className="text-sm text-gray-600">24/7 Emergency Service</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start" data-testid="contact-email">
+                      <div className="bg-primary-light bg-opacity-10 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
+                        <Mail className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-primary-dark">Email</h3>
+                        <p className="text-gray-custom">tom@hometownheating.ca</p>
+                        <p className="text-sm text-gray-600">We respond within 2 hours</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start" data-testid="contact-location">
+                      <div className="bg-primary-light bg-opacity-10 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
+                        <MapPin className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-primary-dark">Service Area</h3>
+                        <p className="text-gray-custom">Prescott, Ontario</p>
+                        <p className="text-sm text-gray-600">And surrounding communities</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start" data-testid="contact-hours">
+                      <div className="bg-primary-light bg-opacity-10 rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
+                        <Clock className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-primary-dark">Business Hours</h3>
+                        <p className="text-gray-custom">Monday - Friday: 8:00 AM - 4:00 PM</p>
+                        <p className="text-sm text-gray-600">Emergency service available 24/7</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              {/* Quick Action Buttons */}
+              <div className="grid grid-cols-2 gap-4">
+                <Button 
+                  variant="default"
+                  onClick={handleCallNow}
+                  className="py-4"
+                  data-testid="button-call-now"
+                >
+                  <Phone className="w-4 h-4 mr-2" />
+                  Call Now
+                </Button>
+                <Button 
+                  variant="default"
+                  onClick={handleEmailUs}
+                  className="py-4"
+                  data-testid="button-email-us"
+                >
+                  <Mail className="w-4 h-4 mr-2" />
+                  Email Us
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

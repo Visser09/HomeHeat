@@ -94,7 +94,7 @@ export default function Financing() {
                 <Phone className="w-5 h-5 mr-2" />
                 Call 613-925-1039
               </Button>
-              <Link href="/contact#quote-form">
+              <Link href="/contact">
                 <Button 
                   variant="ghost"
                   size="lg"
@@ -224,7 +224,7 @@ export default function Financing() {
             <p className="text-gray-600 mb-6">
               All financing options subject to credit approval. Terms and conditions apply.
             </p>
-            <Link href="/contact#quote-form">
+            <Link href="/contact">
               <Button 
                 variant="default"
                 size="lg"
@@ -310,7 +310,7 @@ export default function Financing() {
               <Phone className="w-5 h-5 mr-2" />
               Call for Information
             </Button>
-            <Link href="/contact#quote-form">
+            <Link href="/contact">
               <Button 
                 variant="secondary"
                 size="lg"
