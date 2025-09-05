@@ -16,7 +16,7 @@ import {
 import furnaceImage from "@assets/Screenshot 2025-09-03 104128_1756911367408.png";
 import heatPumpImage from "@assets/heatpumps _1756926164146.png";
 import ductlessOutdoorImage from "@assets/Screenshot 2025-09-03 104412_1756911367409.png";
-import ductlessIndoorImage from "@assets/Screenshot 2025-09-03 104602_1756911367409.png";
+import ductlessIndoorImage from "@assets/Screenshot 2025-09-05 at 4.18.45 PM_1757103529900.png";
 import indoorAirQualityImage from "@assets/Screenshot 2025-09-03 104708_1756911367409.png";
 import radiantFloorImage from "@assets/Screenshot 2025-09-03 105041_1756911367409.png";
 import waterHeaterImage from "@assets/tankless_1756911377281.png";
@@ -177,7 +177,18 @@ export default function Services() {
                     <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                       {service.secondaryImage ? (
                         <div className="flex flex-col h-48 sm:h-64 lg:h-full">
-                          
+                          <img 
+                            src={service.image}
+                            alt={`${service.title} outdoor unit`}
+                            className="w-full h-2/3 object-cover"
+                            data-testid={`service-image-${service.id}-primary`}
+                          />
+                          <img 
+                            src={service.secondaryImage}
+                            alt={`${service.title} indoor unit`}
+                            className="w-full h-1/3 object-cover"
+                            data-testid={`service-image-${service.id}-secondary`}
+                          />
                         </div>
                       ) : (
                         <img 
