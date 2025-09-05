@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { useEffect } from "react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -16,6 +16,13 @@ import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
 
 function Router() {
+  const [location] = useLocation();
+  
+  useEffect(() => {
+    // Scroll to top when route changes
+    window.scrollTo(0, 0);
+  }, [location]);
+
   useEffect(() => {
     function setQuoteOffset() {
       const header = document.querySelector('header') as HTMLElement;
@@ -25,7 +32,7 @@ function Router() {
     }
 
     function scrollToHashIfNeeded() {
-      if (location.hash === '#quote-form') {
+      if (window.location.hash === '#quote-form') {
         const el = document.getElementById('quote-form');
         if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
       }
