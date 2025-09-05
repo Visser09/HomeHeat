@@ -379,12 +379,30 @@ export default function Contact() {
               </div>
             </div>
             <div>
-              <div className="bg-gray-200 rounded-xl h-64 lg:h-80 flex items-center justify-center">
-                <div className="text-center text-gray-500">
-                  <MapPin className="w-12 h-12 mx-auto mb-2" />
-                  <p className="font-medium">Service Area Map</p>
-                  <p className="text-sm">Prescott, Ontario & Surrounding Areas</p>
-                </div>
+              <div className="rounded-xl overflow-hidden shadow-lg aspect-[16/9] w-full">
+                <iframe
+                  src="https://www.google.com/maps?ll=44.7107,-75.5086&z=15&output=embed&q=250%20Centre%20St,%20Prescott,%20ON%20K0E%201T0,%20Canada"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Hometown Heating Location - 250 Centre St, Prescott, ON"
+                  data-testid="google-maps-embed"
+                ></iframe>
+              </div>
+              <div className="mt-4 text-center">
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=250+Centre+St,+Prescott,+ON+K0E+1T0,+Canada"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium"
+                  data-testid="get-directions-link"
+                >
+                  <MapPin className="w-4 h-4" />
+                  Get Directions
+                </a>
               </div>
             </div>
           </div>
