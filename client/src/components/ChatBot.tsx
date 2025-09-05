@@ -21,7 +21,7 @@ const botResponses: { [key: string]: string } = {
   comfort:
     "Our Comfort Club membership includes priority service, annual maintenance, 25% off parts, no diagnostic fees, and 24/7 phone support starting at $199 for a single system. It's a great way to protect your investment! You can apply on our Comfort Club page.",
   contact:
-    "You can reach us at 613-925-1039 or info@hometownheating.ca. We're located in Prescott, Ontario and offer 24/7 emergency service. Visit our Contact page for more details or to send us a message.",
+    "You can reach us at 613-925-1039 or tom@hometownheating.ca. We're located in Prescott, Ontario and offer 24/7 emergency service. Visit our Contact page for more details or to send us a message.",
   emergency:
     "For emergency service, please call us immediately at 613-925-1039. We provide 24/7 emergency service with no overtime charges for Comfort Club members!",
   financing:

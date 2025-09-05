@@ -85,7 +85,7 @@ export default function Contact() {
   };
 
   const handleEmailUs = () => {
-    window.location.href = 'mailto:info@hometownheating.ca';
+    window.location.href = 'mailto:tom@hometownheating.ca';
   };
 
   return (

@@ -65,7 +65,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center" data-testid="footer-email">
                 <Mail className="w-4 h-4 mr-3" />
-                <span>info@hometownheating.ca</span>
+                <span>tom@hometownheating.ca</span>
               </div>
               <div className="flex items-start" data-testid="footer-location">
                 <MapPin className="w-4 h-4 mr-3 mt-1" />

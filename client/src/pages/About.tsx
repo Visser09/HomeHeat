@@ -220,7 +220,7 @@ export default function About() {
             </div>
             <div data-testid="service-area-email">
               <h3 className="font-semibold text-lg mb-2">Email</h3>
-              <p className="text-blue-100">info@hometownheating.ca</p>
+              <p className="text-blue-100">tom@hometownheating.ca</p>
             </div>
             <div data-testid="service-area-location">
               <h3 className="font-semibold text-lg mb-2">Location</h3>
