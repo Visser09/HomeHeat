@@ -1,0 +1,94 @@
+Make all “Get Quote” buttons jump to the quote form (exact steps)
+1) Add a stable anchor to the form
+
+On the Contact page, wrap the “Request a Quote” form with this id and class:
+
+<!-- Contact page -->
+<section id="quote-form" class="anchor-target">
+  <!-- existing Request a Quote form markup -->
+</section>
+
+2) Add CSS so the form does not hide under the sticky header (all sizes)
+
+Put this in your global stylesheet that loads on every page (e.g., styles.css, main.css, or your Tailwind globals). If you don’t have one, create one and include it site-wide.
+
+/* Smooth scrolling for in-page anchors */
+html { scroll-behavior: smooth; }
+
+/* We’ll compute this value dynamically in step 3 */
+:root { --quote-offset: 96px; }
+
+/* Any anchor target can stop below the fixed header */
+.anchor-target { scroll-margin-top: var(--quote-offset); }
+
+3) Compute the exact offset (accounts for your sticky header + any top banner)
+
+Load this tiny script on every page (e.g., in your base layout/footer). It measures your header height on load and resize, sets the CSS var, and ensures we scroll correctly if the URL already contains #quote-form.
+
+<script>
+(function () {
+  function setQuoteOffset() {
+    // adjust selectors if your header wrapper is different
+    var header = document.querySelector('header');
+    var banner = document.querySelector('.announcement-bar, .replit-dev-banner');
+    var offset = (header ? header.offsetHeight : 0) + (banner ? banner.offsetHeight : 0) + 12; // little buffer
+    document.documentElement.style.setProperty('--quote-offset', offset + 'px');
+  }
+
+  function scrollToHashIfNeeded() {
+    if (location.hash === '#quote-form') {
+      var el = document.getElementById('quote-form');
+      if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
+  }
+
+  setQuoteOffset();
+  window.addEventListener('resize', setQuoteOffset);
+  // handle initial navigation with hash (SPA or multi-page)
+  if (document.readyState === 'complete') scrollToHashIfNeeded();
+  window.addEventListener('load', scrollToHashIfNeeded);
+  window.addEventListener('hashchange', scrollToHashIfNeeded);
+})();
+</script>
+
+
+Why both CSS and JS?
+CSS scroll-margin-top keeps the form from hiding under the header. The JS makes the offset exact (header/banners differ by device) and re-applies scrolling when the page loads with a hash or the hash changes.
+
+4) Point every “Get Quote” style CTA to the same anchor
+
+Wherever you have these buttons/links (hero, emergency banner, services tiles, footer, mobile menu), make the href exactly:
+
+<a href="/contact#quote-form" class="btn btn-primary">Get Quote</a>
+
+
+If any CTA is a JS button (no <a>), use:
+
+<button type="button" onclick="window.location.href='/contact#quote-form'">Get Quote</button>
+
+
+Optional (best UX on the Contact page itself): if you’re already on /contact, you can do a pure in-page scroll instead of a route change:
+
+<button type="button" onclick="
+  if (location.pathname === '/contact') {
+    document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else {
+    location.href = '/contact#quote-form';
+  }
+">Get Quote</button>
+
+5) Quick QA checklist (do this once after you push)
+
+Test at 1280px (desktop), 768px (tablet), 375px (phone):
+
+From Home → Get Quote: lands with the “Request a Quote” form fully visible (title not cut off).
+
+From any Services page → Get Quote: same.
+
+From Contact page → pressing a Get Quote again scrolls smoothly to the form (no reload).
+
+With the dev/announcement banner showing: still correct.
+
+Rotate phone to landscape: still correct.
+
+If any page has a different header element, add it to the header selector in the script or increase the buffer by a few pixels.

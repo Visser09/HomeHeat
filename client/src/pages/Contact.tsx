@@ -209,7 +209,7 @@ export default function Contact() {
             </div>
             
             {/* Contact Form */}
-            <div id="quote-form" className="scroll-mt-24">
+            <section id="quote-form" className="anchor-target">
               <Card className="shadow-lg">
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold text-primary-dark mb-6" data-testid="contact-form-title">
@@ -312,7 +312,7 @@ export default function Contact() {
                   </form>
                 </CardContent>
               </Card>
-            </div>
+            </section>
           </div>
         </div>
       </section>

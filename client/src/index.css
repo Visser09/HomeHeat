@@ -29,6 +29,7 @@
   --bg-gray: hsl(220 6% 98%);
   --text-gray: hsl(215.3 19.3% 34.5%);
   --radius: 0.75rem;
+  --quote-offset: 96px;
 }
 
 .dark {
@@ -103,6 +104,11 @@
   
   .text-gray-custom {
     color: hsl(var(--text-gray));
+  }
+  
+  /* Anchor target for smooth scrolling below fixed header */
+  .anchor-target {
+    scroll-margin-top: var(--quote-offset);
   }
 }
 

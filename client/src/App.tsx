@@ -1,4 +1,5 @@
 import { Switch, Route } from "wouter";
+import { useEffect } from "react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -15,6 +16,35 @@ import Footer from "@/components/Footer";
 import ChatBot from "@/components/ChatBot";
 
 function Router() {
+  useEffect(() => {
+    function setQuoteOffset() {
+      const header = document.querySelector('header') as HTMLElement;
+      const banner = document.querySelector('.announcement-bar, .replit-dev-banner') as HTMLElement;
+      const offset = (header ? header.offsetHeight : 0) + (banner ? banner.offsetHeight : 0) + 12;
+      document.documentElement.style.setProperty('--quote-offset', offset + 'px');
+    }
+
+    function scrollToHashIfNeeded() {
+      if (location.hash === '#quote-form') {
+        const el = document.getElementById('quote-form');
+        if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
+    }
+
+    setQuoteOffset();
+    window.addEventListener('resize', setQuoteOffset);
+    
+    if (document.readyState === 'complete') scrollToHashIfNeeded();
+    window.addEventListener('load', scrollToHashIfNeeded);
+    window.addEventListener('hashchange', scrollToHashIfNeeded);
+
+    return () => {
+      window.removeEventListener('resize', setQuoteOffset);
+      window.removeEventListener('load', scrollToHashIfNeeded);
+      window.removeEventListener('hashchange', scrollToHashIfNeeded);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
