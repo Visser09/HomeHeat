@@ -100,7 +100,7 @@ const services = [
       "Compatible with all floor types",
       "Programmable thermostats"
     ],
-    brands: ["Warmup", "HeatTech", "Uponor"],
+    brands: ["Navien"],
     image: radiantFloorImage
   },
   {
@@ -116,7 +116,7 @@ const services = [
       "Gas and electric models",
       "Energy-efficient operation"
     ],
-    brands: ["A.O. Smith", "Bradford White", "Rinnai"],
+    brands: ["Navien"],
     image: waterHeaterImage
   },
   {
