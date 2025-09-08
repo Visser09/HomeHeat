@@ -69,8 +69,7 @@ const services = [
       "Smart home integration available"
     ],
     brands: ["Carrier", "Mitsubishi", "Daikin"],
-    image: ductlessOutdoorImage,
-    secondaryImage: ductlessIndoorImage
+    image: ductlessIndoorImage
   },
   {
     id: "indoor-air",
