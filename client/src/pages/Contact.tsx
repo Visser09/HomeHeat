@@ -250,7 +250,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-primary-dark">Phone</h3>
-                        <p className="text-gray-custom">613-925-1039</p>
+                        <a href="tel:613-925-1039" className="text-gray-custom hover:text-primary transition-colors">613-925-1039</a>
                         <p className="text-sm text-gray-600">24/7 Emergency Service</p>
                       </div>
                     </div>

@@ -147,6 +147,7 @@ export default function ComfortClub() {
               <Button 
                 variant="ghost"
                 size="lg"
+                onClick={() => window.location.href = 'tel:613-925-1039'}
                 className="border-2 border-white text-white hover:bg-white/10"
                 data-testid="button-call-about"
               >

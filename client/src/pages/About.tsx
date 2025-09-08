@@ -216,7 +216,7 @@ export default function About() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div data-testid="service-area-phone">
               <h3 className="font-semibold text-lg mb-2 text-gray-900">Phone</h3>
-              <p className="text-gray-600">613-925-1039</p>
+              <a href="tel:613-925-1039" className="text-gray-600 hover:text-primary transition-colors">613-925-1039</a>
             </div>
             <div data-testid="service-area-email">
               <h3 className="font-semibold text-lg mb-2 text-gray-900">Email</h3>

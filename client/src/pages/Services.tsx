@@ -224,6 +224,7 @@ export default function Services() {
                           </Link>
                           <Button 
                             variant="secondary"
+                            onClick={() => window.location.href = 'tel:613-925-1039'}
                             data-testid={`button-call-${service.id}`}
                           >
                             <Phone className="w-4 h-4 mr-2" />
@@ -254,6 +255,7 @@ export default function Services() {
             <Button 
               variant="secondary"
               size="lg"
+              onClick={() => window.location.href = 'tel:613-925-1039'}
               className="text-red-600 px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold"
               data-testid="button-emergency-call"
             >

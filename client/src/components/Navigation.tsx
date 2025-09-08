@@ -31,10 +31,10 @@ export default function Navigation() {
         {/* Top Contact Bar */}
         <div className="hidden md:flex justify-between items-center py-2 text-sm border-b border-gray-100">
           <div className="flex items-center space-x-6">
-            <div className="flex items-center text-primary">
+            <a href="tel:613-925-1039" className="flex items-center text-primary hover:text-primary-dark transition-colors">
               <Phone className="w-4 h-4 mr-2" />
               <span data-testid="phone-header">613-925-1039</span>
-            </div>
+            </a>
             <div className="flex items-center text-primary">
               <Mail className="w-4 h-4 mr-2" />
               <span data-testid="email-header">visser@hometownheating.ca</span>

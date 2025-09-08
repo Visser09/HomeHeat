@@ -59,10 +59,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-4">Contact</h4>
             <div className="space-y-3 text-gray-100 font-semibold">
-              <div className="flex items-center" data-testid="footer-phone">
+              <a href="tel:613-925-1039" className="flex items-center hover:text-blue-200 transition-colors" data-testid="footer-phone">
                 <Phone className="w-4 h-4 mr-3" />
                 <span>613-925-1039</span>
-              </div>
+              </a>
               <div className="flex items-center" data-testid="footer-email">
                 <Mail className="w-4 h-4 mr-3" />
                 <span>tom@hometownheating.ca</span>

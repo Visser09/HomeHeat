@@ -112,6 +112,7 @@ export default function Home() {
                 <Button 
                   variant="secondary"
                   size="lg"
+                  onClick={() => window.location.href = 'tel:613-925-1039'}
                   data-testid="button-call-now"
                 >
                   <Phone className="w-5 h-5 mr-2" />
