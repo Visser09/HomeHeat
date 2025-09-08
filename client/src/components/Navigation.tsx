@@ -120,32 +120,32 @@ export default function Navigation() {
             </SheetTrigger>
             <SheetContent side="right" className="w-80">
               <div className="flex flex-col space-y-4 mt-8">
-                <Link href="/" data-testid="mobile-nav-home">
+                <Link href="/" data-testid="mobile-nav-home" onClick={() => setMobileOpen(false)}>
                   <span className="block py-3 text-gray-custom hover:text-primary transition-colors">
                     Home
                   </span>
                 </Link>
-                <Link href="/services" data-testid="mobile-nav-products">
+                <Link href="/services" data-testid="mobile-nav-products" onClick={() => setMobileOpen(false)}>
                   <span className="block py-3 text-gray-custom hover:text-primary transition-colors">
                     Products
                   </span>
                 </Link>
-                <Link href="/comfort-club" data-testid="mobile-nav-service-plans">
+                <Link href="/comfort-club" data-testid="mobile-nav-service-plans" onClick={() => setMobileOpen(false)}>
                   <span className="block py-3 text-gray-custom hover:text-primary transition-colors">
                     Service Plans
                   </span>
                 </Link>
-                <Link href="/about" data-testid="mobile-nav-about">
+                <Link href="/about" data-testid="mobile-nav-about" onClick={() => setMobileOpen(false)}>
                   <span className="block py-3 text-gray-custom hover:text-primary transition-colors">
                     About
                   </span>
                 </Link>
-                <Link href="/contact" data-testid="mobile-nav-contact">
+                <Link href="/contact" data-testid="mobile-nav-contact" onClick={() => setMobileOpen(false)}>
                   <span className="block py-3 text-gray-custom hover:text-primary transition-colors">
                     Contact
                   </span>
                 </Link>
-                <Link href="/contact">
+                <Link href="/contact" onClick={() => setMobileOpen(false)}>
                   <Button 
                     variant="default"
                     className="w-full mt-4"
