@@ -177,11 +177,16 @@ export default function Services() {
                     <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                       {service.secondaryImage ? (
                         <div className="flex flex-col h-48 sm:h-64 lg:h-full">
-                          
+                          <img 
+                            src={service.image}
+                            alt={`${service.title} outdoor unit`}
+                            className="w-full h-2/3 object-contain bg-gray-50"
+                            data-testid={`service-image-${service.id}-primary`}
+                          />
                           <img 
                             src={service.secondaryImage}
                             alt={`${service.title} indoor unit`}
-                            className="w-full h-1/3 object-cover"
+                            className="w-full h-1/3 object-contain bg-gray-50"
                             data-testid={`service-image-${service.id}-secondary`}
                           />
                         </div>
@@ -189,7 +194,7 @@ export default function Services() {
                         <img 
                           src={service.image}
                           alt={`${service.title} service`}
-                          className="w-full h-48 sm:h-64 lg:h-full object-cover"
+                          className="w-full h-48 sm:h-64 lg:h-full object-contain bg-gray-50"
                           data-testid={`service-image-${service.id}`}
                         />
                       )}
