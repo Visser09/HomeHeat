@@ -241,40 +241,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Emergency Service Banner */}
-      <section className="py-16 bg-red-600 text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4" data-testid="emergency-service-title">
-            24/7 Emergency Service Available
-          </h2>
-          <p className="text-lg sm:text-xl text-red-100 mb-6 sm:mb-8 max-w-3xl mx-auto px-4 sm:px-0" data-testid="emergency-service-description">
-            HVAC emergencies don't wait for business hours. When your heating or cooling 
-            system fails, our emergency service team is ready to respond quickly.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              variant="secondary"
-              size="lg"
-              onClick={() => window.location.href = 'tel:613-925-1039'}
-              className="text-red-600 px-4 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold"
-              data-testid="button-emergency-call"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Emergency: 613-925-1039
-            </Button>
-            <Link href="/comfort-club">
-              <Button 
-                variant="ghost"
-                size="lg"
-                className="border-2 border-white text-white hover:bg-white/10 px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-lg font-semibold"
-                data-testid="button-comfort-club-emergency"
-              >
-                Join Comfort Club - No Overtime Charges!
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Why Choose Us for Services */}
       <section className="py-16 bg-white">

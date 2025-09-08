@@ -316,29 +316,6 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      {/* Emergency Service Banner */}
-      <section className="py-16 bg-red-600 text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4" data-testid="emergency-title">
-            Need Emergency Service?
-          </h2>
-          <p className="text-xl text-red-100 mb-8 max-w-3xl mx-auto" data-testid="emergency-description">
-            HVAC emergencies don't wait for business hours. When your heating or cooling 
-            system fails, we're ready to respond quickly - 24 hours a day, 365 days a year.
-          </p>
-          <Button 
-            variant="secondary"
-            size="lg"
-            onClick={handleCallNow}
-            className="px-12 py-4 text-xl font-bold text-red-600"
-            data-testid="button-emergency-call"
-          >
-            <Phone className="w-6 h-6 mr-3" />
-            Emergency: 613-925-1039
-          </Button>
-          <p className="text-sm text-red-100 mt-4">No overtime charges for 110 Plan members!</p>
-        </div>
-      </section>
       {/* Service Area Map */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
