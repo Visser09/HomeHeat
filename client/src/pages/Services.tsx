@@ -36,7 +36,7 @@ const services = [
       "Free in-home consultations",
       "Financing available"
     ],
-    brands: ["Carrier", "Bryant", "Lennox"],
+    brands: ["Carrier", "Daikin"],
     image: furnaceImage
   },
   {
@@ -84,7 +84,7 @@ const services = [
       "Filter replacement programs",
       "Duct cleaning services"
     ],
-    brands: ["Carrier", "Honeywell", "Lennox"],
+    brands: ["Carrier", "Daikin"],
     image: indoorAirQualityImage
   },
   {
@@ -132,7 +132,7 @@ const services = [
       "Smart thermostat compatibility",
       "Variable speed technology"
     ],
-    brands: ["Carrier", "Bryant", "Lennox"],
+    brands: ["Carrier", "Daikin"],
     image: airConditioningImage
   }
 ];
