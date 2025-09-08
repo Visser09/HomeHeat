@@ -203,7 +203,7 @@ export default function ServicePlans() {
                 Protect your investment with our comprehensive service plans. From basic maintenance 
                 to complete coverage, we have the perfect plan for your needs.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   variant="secondary"
                   size="lg"
@@ -213,16 +213,6 @@ export default function ServicePlans() {
                   <Phone className="w-5 h-5 mr-2" />
                   Call 613-925-1039
                 </Button>
-                <Link href="#plans">
-                  <Button 
-                    variant="ghost" 
-                    size="lg"
-                    className="border-2 border-white text-white hover:bg-white/10"
-                    data-testid="button-view-plans"
-                  >
-                    View Plans
-                  </Button>
-                </Link>
               </div>
             </div>
             <div className="hidden lg:block">

@@ -123,9 +123,9 @@ export default function Home() {
                     variant="ghost" 
                     size="lg"
                     className="border-2 border-white text-white hover:bg-white/10"
-                    data-testid="button-view-services"
+                    data-testid="button-view-products"
                   >
-                    View Services
+                    View Products
                   </Button>
                 </Link>
               </div>
