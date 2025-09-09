@@ -282,7 +282,7 @@ export default function ServicePlans() {
               <CardHeader className="text-center pb-4 pt-8">
                 <CardTitle className="text-2xl font-bold text-primary-dark">Comfort Club</CardTitle>
                 <p className="text-gray-custom">Premium service and savings</p>
-                <div className="text-3xl font-bold text-primary mt-4">Starting at $199</div>
+                <div className="text-3xl font-bold text-primary mt-4">Starting at $205</div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4 mb-6">
