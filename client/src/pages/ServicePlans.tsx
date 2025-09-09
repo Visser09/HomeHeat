@@ -273,13 +273,8 @@ export default function ServicePlans() {
             </Card>
 
             {/* Comfort Club */}
-            <Card id="comfort-club" className="hover:shadow-lg transition-shadow border-2 border-primary shadow-lg relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <div className="bg-primary text-white text-sm font-semibold py-2 px-4 rounded-full">
-                  Most Popular
-                </div>
-              </div>
-              <CardHeader className="text-center pb-4 pt-8">
+            <Card id="comfort-club" className="hover:shadow-lg transition-shadow border-2">
+              <CardHeader className="text-center pb-4">
                 <CardTitle className="text-2xl font-bold text-primary-dark">Comfort Club</CardTitle>
                 <p className="text-gray-custom">Premium service and savings</p>
                 <div className="text-3xl font-bold text-primary mt-4">Starting at $205</div>
