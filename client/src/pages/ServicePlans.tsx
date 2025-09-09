@@ -226,7 +226,6 @@ export default function ServicePlans() {
           </div>
         </div>
       </section>
-
       {/* Plans Overview */}
       <section id="plans" className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -245,7 +244,7 @@ export default function ServicePlans() {
               <CardHeader className="text-center pb-4">
                 <CardTitle className="text-2xl font-bold text-primary-dark">Basic Plan</CardTitle>
                 <p className="text-gray-custom">Essential annual maintenance</p>
-                <div className="text-3xl font-bold text-primary mt-4">Starting at $99</div>
+                <div className="text-3xl font-bold text-primary mt-4">Starting at $159</div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4 mb-6">
@@ -345,7 +344,6 @@ export default function ServicePlans() {
           </div>
         </div>
       </section>
-
       {/* Application Form */}
       <section id="application-form" className="py-16 bg-gray-custom">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -519,7 +517,6 @@ export default function ServicePlans() {
           </Card>
         </div>
       </section>
-
       {/* Why Choose Service Plans */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -548,7 +545,6 @@ export default function ServicePlans() {
           </div>
         </div>
       </section>
-
       {/* Call to Action */}
       <section className="py-16 bg-primary-dark text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
