@@ -314,7 +314,7 @@ export default function ServicePlans() {
               <CardHeader className="text-center pb-4">
                 <CardTitle className="text-2xl font-bold text-primary-dark">110 Plan</CardTitle>
                 <p className="text-gray-custom">Complete 10-year coverage</p>
-                <div className="text-3xl font-bold text-primary mt-4">Starting at $299</div>
+                <div className="text-3xl font-bold text-primary mt-4">Starting at $22.95/m</div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4 mb-6">
