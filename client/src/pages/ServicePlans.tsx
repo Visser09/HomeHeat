@@ -370,7 +370,7 @@ export default function ServicePlans() {
                     <SelectContent>
                       <SelectItem value="basic">Basic Plan - Starting at $99</SelectItem>
                       <SelectItem value="comfort-club">Comfort Club - Starting at $199</SelectItem>
-                      <SelectItem value="110-plan">110 Plan - Starting at $299</SelectItem>
+                      <SelectItem value="110-plan">110 Plan - Starting at $22.95/m</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
