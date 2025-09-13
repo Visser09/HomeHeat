@@ -39,6 +39,42 @@ app.use((req, res, next) => {
 (async () => {
   const server = await registerRoutes(app);
 
+  // Add API 404 handler first
+  app.use("/api/*", (_req, res) => {
+    res.status(404).json({ message: "API endpoint not found" });
+  });
+
+  // Set status code for SPA routes without terminating - let Vite handle the rest
+  app.use((req: Request, res: Response, next: NextFunction) => {
+    // Skip API routes, assets, and Vite internal routes
+    if (req.path.startsWith('/api') || 
+        req.path.startsWith('/@') || 
+        req.path.startsWith('/src/') || 
+        req.path.startsWith('/node_modules/') ||
+        req.path.includes('.')) {
+      return next();
+    }
+
+    // Only handle GET and HEAD requests for HTML pages
+    if (req.method !== 'GET' && req.method !== 'HEAD') {
+      return next();
+    }
+
+    // Define valid client routes
+    const validRoutes = ['/', '/about', '/services', '/comfort-club', '/contact', '/financing'];
+    const pathname = new URL(req.originalUrl, "http://localhost").pathname;
+    const isValidRoute = validRoutes.includes(pathname);
+
+    if (!isValidRoute) {
+      console.log(`[DEBUG] Setting 404 status for: ${pathname}`);
+      log(`404 route: ${pathname}`);
+      res.statusCode = 404;
+    }
+
+    // Continue to Vite - don't terminate the response
+    next();
+  });
+
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
