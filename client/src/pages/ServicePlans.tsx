@@ -1,13 +1,6 @@
-import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
-import { Link } from "wouter";
+import { JobberRequestEmbed } from "@/components/JobberRequestEmbed";
 import { 
   CheckCircle, 
   Shield, 
@@ -114,79 +107,6 @@ const plan110Features = [
 ];
 
 export default function ServicePlans() {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState('');
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    address: '',
-    systemCount: '',
-    systemTypes: '',
-    message: ''
-  });
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!selectedPlan) {
-      toast({
-        title: "Plan Selection Required",
-        description: "Please select a service plan to continue.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-    
-    try {
-      const response = await apiRequest('POST', '/api/comfort-club', {
-        ...formData,
-        selectedPlan
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Application Submitted!",
-          description: "We'll contact you within 24 hours to set up your service plan.",
-        });
-        
-        // Reset form
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          address: '',
-          systemCount: '',
-          systemTypes: '',
-          message: ''
-        });
-        setSelectedPlan('');
-      } else {
-        throw new Error('Failed to submit application');
-      }
-    } catch (error) {
-      console.error('Form submission error:', error);
-      toast({
-        title: "Submission Failed",
-        description: "Please try again or call us at 613-925-1039",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -263,8 +183,7 @@ export default function ServicePlans() {
                   className="w-full" 
                   data-testid="basic-plan-select"
                   onClick={() => {
-                    setSelectedPlan('basic');
-                    document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('request')?.scrollIntoView({ behavior: 'smooth' });
                   }}
                 >
                   Choose Basic Plan
@@ -295,8 +214,7 @@ export default function ServicePlans() {
                   className="w-full" 
                   data-testid="comfort-club-select"
                   onClick={() => {
-                    setSelectedPlan('comfort-club');
-                    document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('request')?.scrollIntoView({ behavior: 'smooth' });
                   }}
                 >
                   Choose Comfort Club
@@ -328,8 +246,7 @@ export default function ServicePlans() {
                   className="w-full" 
                   data-testid="110-plan-select"
                   onClick={() => {
-                    setSelectedPlan('110-plan');
-                    document.getElementById('application-form')?.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('request')?.scrollIntoView({ behavior: 'smooth' });
                   }}
                 >
                   Choose 110 Plan
@@ -339,177 +256,19 @@ export default function ServicePlans() {
           </div>
         </div>
       </section>
-      {/* Application Form */}
-      <section id="application-form" className="py-16 bg-gray-custom">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Service Request Form */}
+      <section className="py-16 bg-gray-custom">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-4" data-testid="application-title">
-              Apply for Your Service Plan
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-4" data-testid="request-form-title">
+              Request Your Service Plan
             </h2>
-            <p className="text-xl text-gray-custom max-w-3xl mx-auto" data-testid="application-description">
-              Complete the form below and we'll contact you within 24 hours to set up your service plan.
+            <p className="text-xl text-gray-custom max-w-3xl mx-auto" data-testid="request-form-description">
+              Have questions about plans? Use the form below—choose the plan or describe your needs and we'll get back to you.
             </p>
           </div>
-
-          <Card className="shadow-xl">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="mb-6">
-                  <Label htmlFor="plan-selection" className="text-base font-semibold">
-                    Select Your Service Plan *
-                  </Label>
-                  <Select value={selectedPlan} onValueChange={setSelectedPlan}>
-                    <SelectTrigger className="mt-2" data-testid="select-plan">
-                      <SelectValue placeholder="Choose a service plan" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="basic">Basic Plan - Starting at $99</SelectItem>
-                      <SelectItem value="comfort-club">Comfort Club - Starting at $199</SelectItem>
-                      <SelectItem value="110-plan">110 Plan - Starting at $22.95/m</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <Label htmlFor="firstName" className="text-base font-semibold">
-                      First Name *
-                    </Label>
-                    <Input
-                      id="firstName"
-                      type="text"
-                      value={formData.firstName}
-                      onChange={(e) => handleInputChange('firstName', e.target.value)}
-                      required
-                      className="mt-2"
-                      data-testid="input-first-name"
-                    />
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="lastName" className="text-base font-semibold">
-                      Last Name *
-                    </Label>
-                    <Input
-                      id="lastName"
-                      type="text"
-                      value={formData.lastName}
-                      onChange={(e) => handleInputChange('lastName', e.target.value)}
-                      required
-                      className="mt-2"
-                      data-testid="input-last-name"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <Label htmlFor="email" className="text-base font-semibold">
-                      Email Address *
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => handleInputChange('email', e.target.value)}
-                      required
-                      className="mt-2"
-                      data-testid="input-email"
-                    />
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="phone" className="text-base font-semibold">
-                      Phone Number *
-                    </Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => handleInputChange('phone', e.target.value)}
-                      required
-                      className="mt-2"
-                      data-testid="input-phone"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <Label htmlFor="address" className="text-base font-semibold">
-                    Service Address *
-                  </Label>
-                  <Input
-                    id="address"
-                    type="text"
-                    value={formData.address}
-                    onChange={(e) => handleInputChange('address', e.target.value)}
-                    required
-                    className="mt-2"
-                    placeholder="123 Main Street, Prescott, ON"
-                    data-testid="input-address"
-                  />
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <Label htmlFor="systemCount" className="text-base font-semibold">
-                      Number of Systems
-                    </Label>
-                    <Select value={formData.systemCount} onValueChange={(value) => handleInputChange('systemCount', value)}>
-                      <SelectTrigger className="mt-2" data-testid="select-system-count">
-                        <SelectValue placeholder="Select number of systems" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="1">1 System</SelectItem>
-                        <SelectItem value="2">2 Systems</SelectItem>
-                        <SelectItem value="3">3 Systems</SelectItem>
-                        <SelectItem value="4+">4+ Systems</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  
-                  <div>
-                    <Label htmlFor="systemTypes" className="text-base font-semibold">
-                      System Types
-                    </Label>
-                    <Input
-                      id="systemTypes"
-                      type="text"
-                      value={formData.systemTypes}
-                      onChange={(e) => handleInputChange('systemTypes', e.target.value)}
-                      className="mt-2"
-                      placeholder="e.g., Furnace, A/C, Heat Pump"
-                      data-testid="input-system-types"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <Label htmlFor="message" className="text-base font-semibold">
-                    Additional Information
-                  </Label>
-                  <Textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={(e) => handleInputChange('message', e.target.value)}
-                    className="mt-2"
-                    rows={4}
-                    placeholder="Any specific concerns or questions about your HVAC system?"
-                    data-testid="textarea-message"
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="w-full py-3 text-lg"
-                  data-testid="button-submit-application"
-                >
-                  {isSubmitting ? "Submitting..." : "Submit Application"}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+          
+          <JobberRequestEmbed />
         </div>
       </section>
       {/* Why Choose Service Plans */}
@@ -559,16 +318,17 @@ export default function ServicePlans() {
               <Phone className="w-5 h-5 mr-2" />
               Call 613-925-1039
             </Button>
-            <Link href="/contact">
-              <Button 
-                variant="ghost"
-                size="lg"
-                className="border-2 border-white text-white hover:bg-white/10"
-                data-testid="button-contact-cta"
-              >
-                Contact Us Online
-              </Button>
-            </Link>
+            <Button 
+              variant="ghost"
+              size="lg"
+              className="border-2 border-white text-white hover:bg-white/10"
+              onClick={() => {
+                document.getElementById('request')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              data-testid="button-request-service-cta"
+            >
+              Request Service
+            </Button>
           </div>
         </div>
       </section>
