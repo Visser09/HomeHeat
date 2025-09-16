@@ -1,0 +1,72 @@
+1) Replace JobberRequestEmbed with this (exact)
+
+File: src/components/JobberRequestEmbed.tsx (or .jsx)
+
+export function JobberRequestEmbed() {
+  return (
+    <>
+      {/* anchor for #request links */}
+      <div id="request" style={{ scrollMarginTop: '100px' }} />
+
+      {/* full-width wrapper, centered */}
+      <div style={{ maxWidth: 960, margin: '0 auto' }}>
+        <iframe
+          title="Request Service"
+          src="https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/embedded_work_request_form?utm_source=website&utm_medium=embed&utm_campaign=hh-main"
+          width="100%"
+          height="1800"                 // plenty tall so it doesn't clip
+          style={{ display: 'block', border: 0 }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
+    </>
+  );
+}
+
+
+(We put a big height so it can’t be clipped. You can dial it down later.)
+
+2) Nuke any CSS that shrinks iframes
+
+Search the project for iframe { or .iframe. Delete rules that set height, max-height, or overflow:hidden.
+Add this safety rule if you keep a global stylesheet:
+
+File: src/styles/global.css (or wherever your globals live)
+
+/* Jobber embed safety */
+iframe[title="Request Service"] {
+  width: 100% !important;
+  min-height: 1400px !important; /* bump to 1800 if still clipping */
+  display: block;
+  border: 0;
+}
+
+3) Make sure no parent is clipping
+
+On the Service Plans page you pasted, the embed is inside:
+
+<section className="py-16 bg-gray-custom">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    ...
+    <JobberRequestEmbed />
+  </div>
+</section>
+
+
+That’s good. Just confirm none of those containers (or a card/grid) set a fixed height or overflow:hidden. The embed should NOT live inside a Card.
+
+4) (Optional but helpful) Auto-resize helper once in index.html
+
+Since you’re on Vite, add this once near the end of index.html:
+
+<script async src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"></script>
+
+
+It will try to auto-adjust the iframe height. Keep the large fixed height as a fallback.
+
+5) Re-test
+
+Hard refresh the page (or open in an incognito tab).
+
+The form should now be full width (up to 960px) and fully visible (no tiny inner window).

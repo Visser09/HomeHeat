@@ -1,25 +1,21 @@
-interface JobberRequestEmbedProps {
-  className?: string;
-}
-
-export function JobberRequestEmbed({ className = "" }: JobberRequestEmbedProps) {
+export function JobberRequestEmbed() {
   return (
-    <section className={`px-4 py-8 ${className}`}>
+    <>
+      {/* anchor for #request links */}
       <div id="request" style={{ scrollMarginTop: '100px' }} />
-      <div className="mx-auto w-full max-w-none">
-        <div className="w-full overflow-hidden rounded-lg shadow-sm">
-          <iframe
-            src="https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/embedded_work_request_form?utm_source=website&utm_medium=embed&utm_campaign=hh-main"
-            title="Request Service"
-            width="100%"
-            height="1800"
-            style={{ display: 'block', border: 0 }}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full"
-          />
-        </div>
+
+      {/* full-width wrapper, centered */}
+      <div style={{ maxWidth: 960, margin: '0 auto' }}>
+        <iframe
+          title="Request Service"
+          src="https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/embedded_work_request_form?utm_source=website&utm_medium=embed&utm_campaign=hh-main"
+          width="100%"
+          height="1800"                 // plenty tall so it doesn't clip
+          style={{ display: 'block', border: 0 }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </div>
-    </section>
+    </>
   );
 }
