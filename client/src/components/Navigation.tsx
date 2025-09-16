@@ -101,7 +101,7 @@ export default function Navigation() {
               </span>
             </Link>
             
-            <Link href="/contact">
+            <Link href="/contact#request">
               <Button 
                 variant="default"
                 data-testid="button-book-service"
@@ -145,7 +145,7 @@ export default function Navigation() {
                     Contact
                   </span>
                 </Link>
-                <Link href="/contact" onClick={() => setMobileOpen(false)}>
+                <Link href="/contact#request" onClick={() => setMobileOpen(false)}>
                   <Button 
                     variant="default"
                     className="w-full mt-4"

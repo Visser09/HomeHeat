@@ -34,7 +34,7 @@ export default function About() {
                 all heating, cooling, and indoor air quality needs. Family-owned and operated, 
                 we take pride in treating every customer like family.
               </p>
-              <Link href="/contact">
+              <Link href="/contact#request">
                 <Button 
                   variant="secondary"
                   size="lg"
@@ -227,7 +227,7 @@ export default function About() {
               <p className="text-gray-600">Prescott, Ontario</p>
             </div>
           </div>
-          <Link href="/contact">
+          <Link href="/contact#request">
             <Button 
               variant="default"
               size="lg"
