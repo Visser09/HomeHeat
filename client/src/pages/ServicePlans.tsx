@@ -264,7 +264,7 @@ export default function ServicePlans() {
               Request Your Service Plan
             </h2>
             <p className="text-xl text-gray-custom max-w-3xl mx-auto" data-testid="request-form-description">
-              Have questions about plans? Use the form below—choose the plan or describe your needs and we'll get back to you.
+              Ready to get started? Simply submit a request below and our team will contact you to discuss your service plan options and schedule your consultation.
             </p>
           </div>
           
