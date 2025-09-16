@@ -150,7 +150,7 @@ export default function ServicePlans() {
     setIsSubmitting(true);
     
     try {
-      const response = await apiRequest('/api/comfort-club', 'POST', {
+      const response = await apiRequest('POST', '/api/comfort-club', {
         ...formData,
         selectedPlan
       });
