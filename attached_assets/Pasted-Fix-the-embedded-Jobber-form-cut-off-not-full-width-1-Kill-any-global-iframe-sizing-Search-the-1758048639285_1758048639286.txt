@@ -1,0 +1,66 @@
+Fix the embedded Jobber form (cut off / not full width)
+1) Kill any global iframe sizing
+
+Search the codebase for iframe { or Tailwind classes on iframes that set fixed width/height/max-height/overflow.
+Remove any global rules like:
+
+iframe { height: 300px; max-height: 400px; overflow: hidden; }
+
+2) Use this exact embed block
+
+Replace the current embed with this (on Contact / Service Plans pages only):
+
+<section className="px-4 py-8">
+  <div id="request" style={{ scrollMarginTop: '100px' }} />
+  <div className="mx-auto w-full" style={{ maxWidth: 960 }}>
+    <iframe
+      src="https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/embedded_work_request_form?utm_source=website&utm_medium=embed&utm_campaign=hh-main"
+      title="Request Service"
+      width="100%"
+      // Big height so the whole form shows; we'll adjust after testing
+      height="1800"
+      style={{ display: 'block', border: 0 }}
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+  </div>
+</section>
+
+3) Add protective CSS (prevents other styles from shrinking it)
+/* jobber embed safety */
+.jobber-form-wrapper iframe,
+iframe[title="Request Service"] {
+  width: 100% !important;
+  min-height: 1400px !important; /* bump to 1800 if form still scrolls inside */
+  border: 0;
+  display: block;
+}
+
+4) Ensure container isn’t inside a narrow grid/column
+
+Place the embed in a full-width section, not inside a sidebar/grid column. If using a grid, make the embed container span all columns (col-span-full).
+
+5) Mobile polish
+
+If the sticky header covers the anchor jump, keep:
+
+#request { scroll-margin-top: 100px; }
+
+6) (Optional) Auto-resize script
+
+If you want automatic height instead of a big fixed height, try Jobber’s legacy autoresizer (works on many sites):
+
+<script async src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"></script>
+
+
+Place it once near the end of <body>. Keep the iframe height large as a fallback.
+
+Acceptance check
+
+The form fills the content area (centered, full width up to 960px).
+
+No inner scrollbars in the iframe on desktop.
+
+On mobile, the form is 100% width and readable.
+
+Only Contact/Service Plans pages contain the embed.
