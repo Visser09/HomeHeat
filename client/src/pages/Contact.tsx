@@ -1,91 +1,21 @@
-import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+import { JobberRequestEmbed } from "@/components/JobberRequestEmbed";
 import { 
   Phone, 
   Mail, 
   MapPin, 
-  Clock,
-  MessageCircle,
-  Send
+  Clock
 } from "lucide-react";
 
 export default function Contact() {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: ''
-  });
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.phone) {
-      toast({
-        title: "Please fill in all required fields",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-    
-    try {
-      const response = await apiRequest("POST", "/api/contact", formData);
-      
-      if (response.ok) {
-        toast({
-          title: "Message Sent!",
-          description: "We'll respond to your inquiry within 2 hours during business hours.",
-        });
-        
-        // Reset form
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          service: '',
-          message: ''
-        });
-      }
-    } catch (error) {
-      console.error("Error submitting contact form:", error);
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again or call us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const handleCallNow = () => {
     window.location.href = 'tel:613-925-1039';
   };
 
-  const handleEmailUs = () => {
-    window.location.href = 'mailto:tom@hometownheating.ca';
+  const handleScrollToRequest = () => {
+    document.getElementById('request')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -114,12 +44,12 @@ export default function Contact() {
               <Button 
                 variant="ghost"
                 size="lg"
-                onClick={handleEmailUs}
+                onClick={handleScrollToRequest}
                 className="border-2 border-white text-white hover:bg-white/10"
-                data-testid="button-email-us-hero"
+                data-testid="button-request-quote-hero"
               >
                 <Mail className="w-5 h-5 mr-2" />
-                Email Us
+                Request Quote
               </Button>
             </div>
           </div>
@@ -129,110 +59,17 @@ export default function Contact() {
       <section className="py-16 bg-gray-custom">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <section id="quote-form" className="anchor-target">
-              <Card className="shadow-lg">
-                <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold text-primary-dark mb-6" data-testid="contact-form-title">
-                    Request a Quote
-                  </h2>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div data-testid="form-field-first-name">
-                        <Label htmlFor="firstName">First Name *</Label>
-                        <Input
-                          id="firstName"
-                          value={formData.firstName}
-                          onChange={(e) => handleInputChange('firstName', e.target.value)}
-                          required
-                          placeholder="John"
-                        />
-                      </div>
-                      <div data-testid="form-field-last-name">
-                        <Label htmlFor="lastName">Last Name *</Label>
-                        <Input
-                          id="lastName"
-                          value={formData.lastName}
-                          onChange={(e) => handleInputChange('lastName', e.target.value)}
-                          required
-                          placeholder="Smith"
-                        />
-                      </div>
-                    </div>
-                    
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div data-testid="form-field-phone">
-                        <Label htmlFor="phone">Phone *</Label>
-                        <Input
-                          id="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={(e) => handleInputChange('phone', e.target.value)}
-                          required
-                          placeholder="613-555-0123"
-                        />
-                      </div>
-                      <div data-testid="form-field-email">
-                        <Label htmlFor="email">Email *</Label>
-                        <Input
-                          id="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={(e) => handleInputChange('email', e.target.value)}
-                          required
-                          placeholder="john@example.com"
-                        />
-                      </div>
-                    </div>
-                    
-                    <div data-testid="form-field-service">
-                      <Label htmlFor="service">Service Needed</Label>
-                      <Select value={formData.service} onValueChange={(value) => handleInputChange('service', value)}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select a service..." />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="furnace">Furnace Installation/Repair</SelectItem>
-                          <SelectItem value="ac">Air Conditioning</SelectItem>
-                          <SelectItem value="heat-pump">Heat Pump</SelectItem>
-                          <SelectItem value="water-heater">Water Heater</SelectItem>
-                          <SelectItem value="indoor-air">Indoor Air Quality</SelectItem>
-                          <SelectItem value="radiant">Radiant Floor Heating</SelectItem>
-                          <SelectItem value="maintenance">Maintenance</SelectItem>
-                          <SelectItem value="emergency">Emergency Service</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    
-                    <div data-testid="form-field-message">
-                      <Label htmlFor="message">Message</Label>
-                      <Textarea
-                        id="message"
-                        value={formData.message}
-                        onChange={(e) => handleInputChange('message', e.target.value)}
-                        placeholder="Tell us about your heating and cooling needs..."
-                        rows={4}
-                      />
-                    </div>
-                    
-                    <Button 
-                      variant="default"
-                      size="lg"
-                      type="submit"
-                      className="w-full"
-                      disabled={isSubmitting}
-                      data-testid="button-send-message"
-                    >
-                      <Send className="w-4 h-4 mr-2" />
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                    </Button>
-                    
-                    <p className="text-sm text-gray-600 text-center">
-                      We typically respond within 2 hours during business hours
-                    </p>
-                  </form>
-                </CardContent>
-              </Card>
+            {/* Jobber Request Form */}
+            <section className="lg:col-span-2">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold text-primary-dark mb-4" data-testid="request-form-title">
+                  Request Service
+                </h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Submit our secure request form below and our team will follow up through Jobber to schedule your service.
+                </p>
+              </div>
+              <JobberRequestEmbed />
             </section>
             
             {/* Contact Information */}
@@ -304,12 +141,12 @@ export default function Contact() {
                 </Button>
                 <Button 
                   variant="default"
-                  onClick={handleEmailUs}
+                  onClick={handleScrollToRequest}
                   className="py-4"
-                  data-testid="button-email-us"
+                  data-testid="button-request-quote"
                 >
                   <Mail className="w-4 h-4 mr-2" />
-                  Email Us
+                  Request Quote
                 </Button>
               </div>
             </div>
