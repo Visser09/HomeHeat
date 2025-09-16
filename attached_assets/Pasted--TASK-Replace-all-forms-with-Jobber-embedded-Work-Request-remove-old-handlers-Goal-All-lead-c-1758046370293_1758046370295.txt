@@ -1,0 +1,103 @@
+📋 TASK: Replace all forms with Jobber embedded Work Request & remove old handlers
+
+Goal: All lead capture (Contact, Comfort Club, “Get Quote”, Service Plans) should use a single embedded Jobber Work Request form so submissions go straight into Jobber. Remove legacy forms and backend email code.
+
+1) Embed code (use everywhere)
+
+Add this block wherever a form currently appears (Contact page, Comfort Club page, Service Plans “Inquire” area, any “Get Quote” sections). Wrap with an anchor so buttons can jump here.
+
+<!-- Request anchor for jump-links -->
+<div id="request"></div>
+
+<!-- Jobber embedded request form -->
+<div class="jobber-form-wrapper" style="max-width: 960px; margin: 0 auto; padding: 24px 16px;">
+  <iframe
+    src="https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/embedded_work_request_form?utm_source=website&utm_medium=embed&utm_campaign=hh-main"
+    width="100%"
+    height="1200"
+    style="border:0; overflow:auto;"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Request service"
+  ></iframe>
+</div>
+
+
+Notes:
+
+Use that exact src with UTM params.
+
+Start with height="1200" (adjust after eyeballing on phone so there’s no double-scroll).
+
+If React/Next.js, paste the same JSX (attributes are fine as-is).
+
+2) Pages to update
+
+Contact page: remove existing form; insert embed block.
+
+Comfort Club page: remove membership application form; insert embed; keep the membership details text above the embed.
+
+Service Plans page: keep plan comparison content, but replace any “Apply/Enroll/Request” form with the embed. If there’s no room, place a prominent “Request Service” section with the embed at the bottom.
+
+Any “Get Quote”, “Request Estimate”, “Book Now” sections across Home/Services pages: either:
+
+change buttons to href="/contact#request" (or the page where the embed lives), or
+
+place the embed directly on that page under the hero.
+
+3) Update buttons/links
+
+Find and update all CTA buttons:
+
+Change to href="/contact#request" (or the relevant route) so they jump to the embedded form.
+
+If using on-page anchors, ensure there’s exactly one id="request" per page and buttons point to it.
+
+4) Remove/disable legacy form code
+
+Delete/disable any backend routes that handled form posts (e.g. /api/contact, /api/comfort-club, /api/quote).
+
+Remove Nodemailer usage tied to those routes/files (e.g., sendContactInquiryEmail, sendComfortClubApplicationEmail).
+
+Remove related env secrets: EMAIL_USER, EMAIL_PASS (only if nothing else uses them).
+
+Remove front-end form components and validation tied to those old flows.
+
+5) Clean up navigation + copy
+
+Replace on-page text that says “email us” or references the old contact form with:
+“Submit the request form below and our team will follow up through Jobber.”
+
+Service/Comfort Club pages: Add one short line above the embed:
+“Have questions about plans? Use the form below—choose the plan or describe your issue and we’ll get back to you.”
+
+6) Styling/QOL
+
+Add a little spacing around the embed container (already in inline styles).
+
+Ensure the navbar or sticky headers don’t cover the anchor when jumping to #request. If they do, add CSS:
+
+#request { scroll-margin-top: 100px; }
+
+
+Test mobile: ensure the iframe is full-width and not clipped.
+
+7) Acceptance criteria
+
+There are no custom HTML forms left on the site.
+
+All CTAs (“Get Quote”, “Book”, “Contact”, “Comfort Club Apply/Join”, “Service Request”) land on a page with the Jobber embed or scroll to #request.
+
+No POSTs go to our backend; there are no Nodemailer calls in use.
+
+A live submission through the embedded form appears inside Jobber → Requests.
+
+8) Quick test plan
+
+Click every “Get Quote / Contact / Service / Comfort Club” button on mobile and desktop → confirm it lands on the embedded form (or jumps to #request).
+
+Submit a test request → confirm it shows up in Jobber Requests.
+
+Check browser console → no errors related to blocked iframes or mixed content.
+
+Check there are no failing calls to old /api/* endpoints.
