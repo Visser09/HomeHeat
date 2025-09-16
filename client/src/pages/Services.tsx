@@ -151,7 +151,7 @@ export default function Services() {
               From installation to maintenance, we provide comprehensive heating, cooling, 
               and indoor air quality services using only the highest quality equipment and materials.
             </p>
-            <Link href="/contact">
+            <Link href="/contact#request">
               <Button 
                 variant="secondary"
                 size="lg"
@@ -214,7 +214,7 @@ export default function Services() {
                         </div>
                         
                         <div className="flex flex-col sm:flex-row gap-4">
-                          <Link href="/contact">
+                          <Link href="/contact#request">
                             <Button 
                               variant="default"
                               data-testid={`button-quote-${service.id}`}

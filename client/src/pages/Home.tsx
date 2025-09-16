@@ -257,7 +257,7 @@ export default function Home() {
           </div>
           
           <div className="text-center">
-            <Link href="/contact">
+            <Link href="/contact#request">
               <Button 
                 variant="default"
                 size="lg"
