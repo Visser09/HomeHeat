@@ -1,0 +1,162 @@
+🔧 Task: Diagnose & fix Jobber embedded form (clipped/tiny iframe)
+
+Goal: On /contact and /service-plans, the Jobber form renders at full content width (centered, up to 960px) with no inner scrollbars or clipping.
+
+0) Current component (keep)
+
+We’ve updated JobberRequestEmbed already. Leave it as:
+
+export function JobberRequestEmbed() {
+  return (
+    <>
+      <div id="request" style={{ scrollMarginTop: '100px' }} />
+      <div className="jobber-wrap" style={{ maxWidth: 960, width: '100%', margin: '0 auto' }}>
+        <iframe
+          title="Request Service"
+          src="https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/embedded_work_request_form?utm_source=website&utm_medium=embed&utm_campaign=hh-main"
+          width="100%"
+          height="1800"
+          style={{ display: 'block', border: 0 }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
+    </>
+  );
+}
+
+1) Find the exact CSS/parent causing the clip (required)
+
+Open /contact in the preview. Inspect the <iframe title="Request Service">.
+
+In Elements → Styles/Computed, walk up parents until you find the first element that sets any of:
+
+overflow: hidden|auto|scroll
+
+height or max-height
+
+a narrow width (small max-width, w-…, grid column, or flex child)
+
+Screenshot the culprit node in DevTools with its computed styles.
+
+90% likely culprits:
+
+Global iframe { … } or .prose iframe { … } rules
+
+A parent Card or container with overflow-hidden or max-h-*
+
+A grid/column that’s too narrow or uses aspect-*
+
+2) Remove global constraints (must check all)
+
+Search the codebase for each of these and remove/override them if they affect the Jobber iframe:
+
+Selectors:
+
+iframe {
+
+.prose iframe
+
+.card / .Card wrappers
+
+Tailwind classes near the embed or its parents:
+
+overflow-hidden
+
+max-h-*, h-*, aspect-*
+
+overly narrow containers (max-w-sm, max-w-md, custom w-[…])
+
+Files to search:
+
+src/index.css, src/app.css, src/styles.css, src/styles/global.css
+
+src/components/ui/card.tsx
+
+Any layout/wrapper components: src/App.tsx, src/components/Layout*, src/pages/_app.tsx (if Next), src/components/Prose*
+
+Add this at the bottom of the main global stylesheet as a safety net:
+
+/* Jobber embed safety overrides */
+.jobber-wrap { width: 100% !important; }
+iframe[title="Request Service"] {
+  width: 100% !important;
+  min-height: 1600px !important; /* bump to 1800 if inner scroll appears */
+  display: block !important;
+  border: 0 !important;
+}
+
+
+If Tailwind Typography is used anywhere around the form:
+
+.prose iframe {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 1600px !important;
+}
+
+3) Ensure the embed’s container is full-width (not in a Card/column)
+
+The embed should not be rendered inside a Card, CardContent, or a grid column meant for small content.
+
+Keep it in a full-width section like we have:
+
+<section className="py-16 bg-gray-custom">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <JobberRequestEmbed />
+  </div>
+</section>
+
+
+If a parent sets display:grid with columns, make sure the wrapper spans all columns (e.g., col-span-full) or move it outside the grid.
+
+4) Optional auto-resize helper (once)
+
+Add this once near the end of index.html (or layout HTML) to help height adjust:
+
+<script async src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js"></script>
+
+
+(Keep the large fixed height as fallback.)
+
+5) Acceptance criteria (must pass)
+
+On /contact and /service-plans:
+
+The iframe measures ≥ 700px width on desktop in DevTools (computed width).
+
+No inner scrollbars inside the iframe on desktop.
+
+On mobile, the iframe spans the content width and is readable.
+
+No overflow:hidden on any parent of the iframe.
+
+The form loads without being cut off at the right/left edges.
+
+6) Quick automated check (Playwright—optional but helpful)
+
+Add a basic e2e to verify width and visibility:
+
+import { test, expect } from '@playwright/test';
+
+async function checkPage(page, path: string) {
+  await page.goto(path);
+  const iframe = page.locator('iframe[title="Request Service"]');
+  await expect(iframe).toBeVisible();
+  const box = await iframe.boundingBox();
+  expect(box?.width || 0).toBeGreaterThan(700); // desktop breakpoint
+}
+
+test('Jobber form renders correctly on contact', async ({ page }) => {
+  await checkPage(page, '/contact');
+});
+
+test('Jobber form renders correctly on service plans', async ({ page }) => {
+  await checkPage(page, '/service-plans');
+});
+
+7) Report back
+
+Post the exact selector & file that was constraining the iframe (with a before/after diff).
+
+Confirm screenshots of both pages after fix on desktop and mobile emulator.
