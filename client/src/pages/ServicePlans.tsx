@@ -312,15 +312,6 @@ export default function ServicePlans() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              variant="secondary"
-              size="lg"
-              onClick={() => window.location.href = 'tel:613-925-1039'}
-              data-testid="button-call-cta"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Call 613-925-1039
-            </Button>
-            <Button 
               variant="ghost"
               size="lg"
               className="border-2 border-white text-white hover:bg-white/10"
