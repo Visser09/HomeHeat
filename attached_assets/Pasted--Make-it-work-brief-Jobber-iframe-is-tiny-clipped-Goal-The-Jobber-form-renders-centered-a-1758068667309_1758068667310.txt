@@ -1,0 +1,122 @@
+.
+
+🔧 “Make it work” brief — Jobber iframe is tiny/clipped
+
+Goal: The Jobber form renders centered at up to 960px width, no inner scrollbars, on /contact and /service-plans.
+
+1) Inspect and identify the culprit (must do)
+
+Open /contact → Inspect the element iframe[title="Request Service"].
+
+In Elements → Computed, go up the DOM from the iframe until you hit the first parent whose computed styles show ANY of:
+
+max-width < 960px that isn’t intended (e.g., max-w-prose, max-w-md, fixed width)
+
+display:grid with a narrow column
+
+overflow: hidden|auto|scroll
+
+fixed height/max-height
+
+Post the selector + file of that parent and remove the constraint.
+
+Common offenders in this codebase:
+
+A .prose wrapper (Tailwind Typography) or max-w-prose around the form section
+
+A Card/panel or grid column wrapping the embed
+
+A global iframe { … } rule
+
+overflow-hidden on a parent
+
+2) Ensure the embed is not in a narrow column
+
+In both pages, the embed must be outside any Card and any narrow grid column.
+
+Structure should be:
+
+<section className="py-16 bg-gray-custom">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Title/desc can live in a centered column if you want */}
+    {/* The EMBED must be on its own full-width row: */}
+    <div className="col-span-full">
+      <JobberRequestEmbed />
+    </div>
+  </div>
+</section>
+
+
+If the section uses a grid, add col-span-full to the wrapper around <JobberRequestEmbed /> or remove the grid for that row.
+
+3) Kill global/style constraints
+
+Search the repo for each and remove/override if they touch the embed:
+
+Selectors to search:
+
+iframe {
+
+.prose iframe
+
+.card, .Card, overflow-hidden
+
+max-w-prose, max-w-md, w-[…], h-*, max-h-*, aspect-*
+
+Likely files:
+src/index.css, src/app.css, src/styles/global.css, layout wrappers, components/ui/card.tsx, any Prose* component.
+
+4) Keep this component exactly (already in place)
+export function JobberRequestEmbed() {
+  return (
+    <>
+      <div id="request" style={{ scrollMarginTop: '100px' }} />
+      <div className="jobber-wrap" style={{ maxWidth: 960, width: '100%', margin: '0 auto' }}>
+        <iframe
+          title="Request Service"
+          src="https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/embedded_work_request_form?utm_source=website&utm_medium=embed&utm_campaign=hh-main"
+          width="100%"
+          height="1800"
+          style={{ display: 'block', border: 0 }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
+    </>
+  );
+}
+
+5) Add hard overrides at the bottom of your main CSS
+/* Jobber embed safety overrides */
+.jobber-wrap { width: 100% !important; }
+
+iframe[title="Request Service"] {
+  width: 100% !important;
+  min-height: 1800px !important;
+  display: block !important;
+  border: 0 !important;
+}
+
+/* If any .prose wrapper is nearby, prevent it from shrinking the iframe */
+.prose iframe {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 1800px !important;
+}
+
+6) Acceptance checks (don’t stop until these pass)
+
+In DevTools, the computed width of .jobber-wrap on desktop is ≥ 900px (inside the 6xl container).
+
+The iframe shows the entire Jobber form (no tiny slice) and no inner scrollbar on desktop.
+
+On mobile, the iframe spans the content width.
+
+7) Quick diagnostic to prove width (temporary)
+
+Drop this just after the iframe temporarily:
+
+<div style="height:4px;background:#0ea5e9;margin-top:8px;"></div>
+
+
+If that bar is also narrow, a parent container is still constraining width—keep walking up in DevTools and remove the constraint.

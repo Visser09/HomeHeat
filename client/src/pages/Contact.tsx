@@ -55,24 +55,25 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      {/* Contact Information & Form */}
+      {/* Jobber Request Form */}
       <section className="py-16 bg-gray-custom">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-primary-dark mb-4" data-testid="request-form-title">
+              Request Service
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Submit our secure request form below and our team will follow up through Jobber to schedule your service.
+            </p>
+          </div>
+          <JobberRequestEmbed />
+        </div>
+      </section>
+      
+      {/* Contact Information */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Jobber Request Form */}
-            <section className="lg:col-span-2">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-primary-dark mb-4" data-testid="request-form-title">
-                  Request Service
-                </h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                  Submit our secure request form below and our team will follow up through Jobber to schedule your service.
-                </p>
-              </div>
-              <JobberRequestEmbed />
-            </section>
-            
-            {/* Contact Information */}
             <div>
               <Card className="shadow-lg mb-8">
                 <CardContent className="p-8">

@@ -12,6 +12,7 @@ export function JobberRequestEmbed() {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         />
+        <div style={{height: '4px', background: '#0ea5e9', marginTop: '8px'}}></div>
       </div>
     </>
   );

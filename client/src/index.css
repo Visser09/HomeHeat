@@ -124,9 +124,17 @@
 
 /* Jobber embed safety overrides */
 .jobber-wrap { width: 100% !important; }
+
 iframe[title="Request Service"] {
   width: 100% !important;
   min-height: 1800px !important;
   display: block !important;
   border: 0 !important;
+}
+
+/* If any .prose wrapper is nearby, prevent it from shrinking the iframe */
+.prose iframe {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 1800px !important;
 }
