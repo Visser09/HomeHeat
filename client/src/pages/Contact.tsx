@@ -130,28 +130,6 @@ export default function Contact() {
                   </div>
                 </CardContent>
               </Card>
-              
-              {/* Quick Action Buttons */}
-              <div className="grid grid-cols-2 gap-4">
-                <Button 
-                  variant="default"
-                  onClick={handleCallNow}
-                  className="py-4"
-                  data-testid="button-call-now"
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Call Now
-                </Button>
-                <Button 
-                  variant="default"
-                  onClick={handleOpenRequestForm}
-                  className="py-4"
-                  data-testid="button-request-service"
-                >
-                  <Mail className="w-4 h-4 mr-2" />
-                  Request Service
-                </Button>
-              </div>
             </div>
 
             {/* Map and Directions */}

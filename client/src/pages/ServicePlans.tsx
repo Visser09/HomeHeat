@@ -180,14 +180,6 @@ export default function ServicePlans() {
                     </div>
                   ))}
                 </div>
-                <Button 
-                  variant="secondary" 
-                  className="w-full" 
-                  data-testid="basic-plan-select"
-                  onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
-                >
-                  Choose Basic Plan
-                </Button>
               </CardContent>
             </Card>
 
@@ -210,13 +202,6 @@ export default function ServicePlans() {
                     </div>
                   ))}
                 </div>
-                <Button 
-                  className="w-full" 
-                  data-testid="comfort-club-select"
-                  onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
-                >
-                  Choose Comfort Club
-                </Button>
               </CardContent>
             </Card>
 
@@ -239,14 +224,6 @@ export default function ServicePlans() {
                     </div>
                   ))}
                 </div>
-                <Button 
-                  variant="secondary" 
-                  className="w-full" 
-                  data-testid="110-plan-select"
-                  onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
-                >
-                  Choose 110 Plan
-                </Button>
               </CardContent>
             </Card>
           </div>
