@@ -26,11 +26,10 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight" data-testid="contact-hero-title">
-              Get In Touch <span className="text-blue-200">Today</span>
+              Get In Touch & <span className="text-blue-200">Request Service Today</span>
             </h1>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed max-w-3xl mx-auto" data-testid="contact-hero-description">
-              Ready to improve your home comfort? Contact us for a free consultation 
-              and quote. We're here to help 24/7.
+              Ready to improve your home comfort? Call us for immediate assistance or request service through our secure form. We're here to help 24/7.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -47,37 +46,15 @@ export default function Contact() {
                 size="lg"
                 onClick={handleOpenRequestForm}
                 className="border-2 border-white text-white hover:bg-white/10"
-                data-testid="button-request-quote-hero"
+                data-testid="button-request-service-hero"
               >
                 <Mail className="w-5 h-5 mr-2" />
-                Request Quote
+                Request Service
               </Button>
             </div>
           </div>
         </div>
       </section>
-      {/* Jobber Request Form */}
-      <section className="py-16 bg-gray-custom">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-primary-dark mb-4" data-testid="request-form-title">
-              Request Service
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-              Click below to access our secure request form. Our team will follow up through Jobber to schedule your service.
-            </p>
-            <Button 
-              size="lg"
-              onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
-              data-testid="button-request-service-external"
-            >
-              <Mail className="w-5 h-5 mr-2" />
-              Request Service
-            </Button>
-          </div>
-        </div>
-      </section>
-      
       {/* Contact Information */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,10 +129,10 @@ export default function Contact() {
                   variant="default"
                   onClick={handleOpenRequestForm}
                   className="py-4"
-                  data-testid="button-request-quote"
+                  data-testid="button-request-service"
                 >
                   <Mail className="w-4 h-4 mr-2" />
-                  Request Quote
+                  Request Service
                 </Button>
               </div>
             </div>

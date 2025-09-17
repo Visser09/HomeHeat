@@ -125,15 +125,15 @@ export default function ServicePlans() {
                 Protect your investment with our comprehensive service plans. From basic maintenance 
                 to complete coverage, we have the perfect plan for your needs.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex justify-center">
                 <Button 
                   variant="secondary"
                   size="lg"
-                  data-testid="button-call-now"
-                  onClick={() => window.location.href = 'tel:613-925-1039'}
+                  data-testid="button-request-service-hero"
+                  onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
                 >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call 613-925-1039
+                  <Mail className="w-5 h-5 mr-2" />
+                  Request Service
                 </Button>
               </div>
             </div>
