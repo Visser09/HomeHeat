@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { JobberRequestEmbed } from "@/components/JobberRequestEmbed";
 import { 
   CheckCircle, 
   Shield, 
@@ -12,10 +11,13 @@ import {
   Award,
   Wrench,
   Home,
-  Timer
+  Timer,
+  Mail
 } from "lucide-react";
 
 import spencer_AC from "@assets/spencer-AC.jpg";
+
+const JOBBER_FORM_URL = 'https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/new?source=social_media';
 
 const basicPlanFeatures = [
   {
@@ -182,9 +184,7 @@ export default function ServicePlans() {
                   variant="secondary" 
                   className="w-full" 
                   data-testid="basic-plan-select"
-                  onClick={() => {
-                    document.getElementById('request')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                  onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
                 >
                   Choose Basic Plan
                 </Button>
@@ -213,9 +213,7 @@ export default function ServicePlans() {
                 <Button 
                   className="w-full" 
                   data-testid="comfort-club-select"
-                  onClick={() => {
-                    document.getElementById('request')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                  onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
                 >
                   Choose Comfort Club
                 </Button>
@@ -245,9 +243,7 @@ export default function ServicePlans() {
                   variant="secondary" 
                   className="w-full" 
                   data-testid="110-plan-select"
-                  onClick={() => {
-                    document.getElementById('request')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
+                  onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
                 >
                   Choose 110 Plan
                 </Button>
@@ -259,16 +255,22 @@ export default function ServicePlans() {
       {/* Service Request Form */}
       <section className="py-16 bg-gray-custom">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-4" data-testid="request-form-title">
               Request Your Service Plan
             </h2>
-            <p className="text-xl text-gray-custom max-w-3xl mx-auto" data-testid="request-form-description">
-              Ready to get started? Simply submit a request below and our team will contact you to discuss your service plan options and schedule your consultation.
+            <p className="text-xl text-gray-custom max-w-3xl mx-auto mb-8" data-testid="request-form-description">
+              Ready to get started? Click below to access our service request form and our team will contact you to discuss your service plan options and schedule your consultation.
             </p>
+            <Button 
+              size="lg"
+              onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
+              data-testid="button-request-service-plan-external"
+            >
+              <Mail className="w-5 h-5 mr-2" />
+              Request Service Plan
+            </Button>
           </div>
-          
-          <JobberRequestEmbed />
         </div>
       </section>
       {/* Why Choose Service Plans */}
@@ -322,9 +324,7 @@ export default function ServicePlans() {
               variant="ghost"
               size="lg"
               className="border-2 border-white text-white hover:bg-white/10"
-              onClick={() => {
-                document.getElementById('request')?.scrollIntoView({ behavior: 'smooth' });
-              }}
+              onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
               data-testid="button-request-service-cta"
             >
               Request Service

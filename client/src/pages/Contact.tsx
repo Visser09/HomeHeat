@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { JobberRequestEmbed } from "@/components/JobberRequestEmbed";
 import { 
   Phone, 
   Mail, 
@@ -8,14 +7,16 @@ import {
   Clock
 } from "lucide-react";
 
+const JOBBER_FORM_URL = 'https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/new?source=social_media';
+
 export default function Contact() {
 
   const handleCallNow = () => {
     window.location.href = 'tel:613-925-1039';
   };
 
-  const handleScrollToRequest = () => {
-    document.getElementById('request')?.scrollIntoView({ behavior: 'smooth' });
+  const handleOpenRequestForm = () => {
+    window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -44,7 +45,7 @@ export default function Contact() {
               <Button 
                 variant="ghost"
                 size="lg"
-                onClick={handleScrollToRequest}
+                onClick={handleOpenRequestForm}
                 className="border-2 border-white text-white hover:bg-white/10"
                 data-testid="button-request-quote-hero"
               >
@@ -58,15 +59,22 @@ export default function Contact() {
       {/* Jobber Request Form */}
       <section className="py-16 bg-gray-custom">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center">
             <h2 className="text-3xl font-bold text-primary-dark mb-4" data-testid="request-form-title">
               Request Service
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Submit our secure request form below and our team will follow up through Jobber to schedule your service.
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+              Click below to access our secure request form. Our team will follow up through Jobber to schedule your service.
             </p>
+            <Button 
+              size="lg"
+              onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
+              data-testid="button-request-service-external"
+            >
+              <Mail className="w-5 h-5 mr-2" />
+              Request Service
+            </Button>
           </div>
-          <JobberRequestEmbed />
         </div>
       </section>
       
@@ -142,7 +150,7 @@ export default function Contact() {
                 </Button>
                 <Button 
                   variant="default"
-                  onClick={handleScrollToRequest}
+                  onClick={handleOpenRequestForm}
                   className="py-4"
                   data-testid="button-request-quote"
                 >
