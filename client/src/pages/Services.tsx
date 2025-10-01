@@ -19,7 +19,7 @@ import ductlessOutdoorImage from "@assets/Screenshot 2025-09-03 104412_175691136
 import ductlessIndoorImage from "@assets/ductless-indoor-unit.png";
 import indoorAirQualityImage from "@assets/Screenshot 2025-09-03 104708_1756911367409.png";
 import radiantFloorImage from "@assets/Screenshot 2025-09-03 105041_1756911367409.png";
-import waterHeaterImage from "@assets/tankless_1756911377281.png";
+import waterHeaterImage from "@assets/NPE-2-Contractor-installation_1759321111449.png";
 import airConditioningImage from "@assets/Screenshot 2025-09-03 104018_1756911384668.png";
 
 const services = [
