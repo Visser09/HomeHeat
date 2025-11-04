@@ -35,10 +35,14 @@ export default function Navigation() {
               <Phone className="w-4 h-4 mr-2" />
               <span data-testid="phone-header">613-925-1039</span>
             </a>
-            <div className="flex items-center text-primary">
+            <a 
+              href="mailto:visser@hometownheating.ca" 
+              className="flex items-center text-primary hover:text-primary-dark transition-colors"
+              data-testid="link-email-header"
+            >
               <Mail className="w-4 h-4 mr-2" />
               <span data-testid="email-header">visser@hometownheating.ca</span>
-            </div>
+            </a>
             <div className="flex items-center text-gray-custom">
               <MapPin className="w-4 h-4 mr-2" />
               <span>Prescott, Ontario</span>
