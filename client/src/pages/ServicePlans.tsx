@@ -111,6 +111,11 @@ const elitePlanFeatures = [
     icon: DollarSign,
     title: "10% Off Next HVAC System",
     description: "10% off your next HVAC system and 10% off system upgrades and add-ons"
+  },
+  {
+    icon: Gift,
+    title: "$500 Equipment Upgrade Credit",
+    description: "Apply a $500 credit toward any new furnace, AC, heat pump, or IAQ product"
   }
 ];
 
