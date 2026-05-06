@@ -5,6 +5,8 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Phone, Mail, MapPin, Menu } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
+const JOBBER_FORM_URL = 'https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/new?source=social_media';
+
 const services = [
   { name: "Furnaces", path: "/services#furnaces" },
   { name: "Air Conditioning", path: "/services#ac" },
@@ -107,14 +109,13 @@ export default function Navigation() {
               </span>
             </Link>
             
-            <Link href="/contact#request">
-              <Button 
-                variant="default"
-                data-testid="button-book-service"
-              >
-                Book Service
-              </Button>
-            </Link>
+            <Button 
+              variant="default"
+              data-testid="button-book-service"
+              onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
+            >
+              Book Service
+            </Button>
           </div>
           
           {/* Mobile Menu Button */}
@@ -151,15 +152,14 @@ export default function Navigation() {
                     Contact
                   </span>
                 </Link>
-                <Link href="/contact#request" onClick={() => setMobileOpen(false)}>
-                  <Button 
-                    variant="default"
-                    className="w-full mt-4"
-                    data-testid="mobile-button-book-service"
-                  >
-                    Book Service
-                  </Button>
-                </Link>
+                <Button 
+                  variant="default"
+                  className="w-full mt-4"
+                  data-testid="mobile-button-book-service"
+                  onClick={() => { setMobileOpen(false); window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer'); }}
+                >
+                  Book Service
+                </Button>
               </div>
             </SheetContent>
           </Sheet>

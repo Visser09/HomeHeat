@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+
+const JOBBER_FORM_URL = 'https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/new?source=social_media';
 import { 
   Award, 
   Users, 
@@ -34,16 +36,15 @@ export default function About() {
                 all heating, cooling, and indoor air quality needs. Family-owned and operated, 
                 we take pride in treating every customer like family.
               </p>
-              <Link href="/contact#request">
-                <Button 
-                  variant="secondary"
-                  size="lg"
-                  data-testid="button-contact-us"
-                >
+              <Button 
+                variant="secondary"
+                size="lg"
+                data-testid="button-contact-us"
+                onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
+              >
                   <Phone className="w-5 h-5 mr-2" />
                   Contact Us Today
-                </Button>
-              </Link>
+              </Button>
             </div>
             <div className="hidden lg:block">
               <img 
@@ -227,15 +228,14 @@ export default function About() {
               <p className="text-gray-600">Prescott, Ontario</p>
             </div>
           </div>
-          <Link href="/contact#request">
-            <Button 
-              variant="default"
-              size="lg"
-              data-testid="button-get-in-touch"
-            >
-              Get In Touch Today
-            </Button>
-          </Link>
+          <Button 
+            variant="default"
+            size="lg"
+            data-testid="button-get-in-touch"
+            onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
+          >
+            Get In Touch Today
+          </Button>
         </div>
       </section>
     </div>

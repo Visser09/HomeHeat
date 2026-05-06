@@ -21,6 +21,8 @@ import {
 
 import logoImage from "@assets/614388688_1500152605198732_6395275072461309092_n_1778086830649.jpg";
 
+const JOBBER_FORM_URL = 'https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/new?source=social_media';
+
 const services = [
   {
     icon: Flame,
@@ -261,15 +263,14 @@ export default function Home() {
           </div>
           
           <div className="text-center">
-            <Link href="/contact#request">
-              <Button 
-                variant="default"
-                size="lg"
-                data-testid="button-get-quote"
-              >
-                Get Free Quote
-              </Button>
-            </Link>
+            <Button 
+              variant="default"
+              size="lg"
+              data-testid="button-get-quote"
+              onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
+            >
+              Get Free Quote
+            </Button>
           </div>
         </div>
       </section>

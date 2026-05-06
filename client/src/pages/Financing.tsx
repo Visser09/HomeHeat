@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+
+const JOBBER_FORM_URL = 'https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/new?source=social_media';
 import { 
   CheckCircle, 
   DollarSign, 
@@ -94,16 +96,15 @@ export default function Financing() {
                 <Phone className="w-5 h-5 mr-2" />
                 Call 613-925-1039
               </Button>
-              <Link href="/contact#request">
-                <Button 
-                  variant="ghost"
-                  size="lg"
-                  className="border-2 border-white text-white hover:bg-white/10"
-                  data-testid="button-apply-online"
-                >
+              <Button 
+                variant="ghost"
+                size="lg"
+                className="border-2 border-white text-white hover:bg-white/10"
+                data-testid="button-apply-online"
+                onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
+              >
                   Apply Online
-                </Button>
-              </Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -224,15 +225,14 @@ export default function Financing() {
             <p className="text-gray-600 mb-6">
               All financing options subject to credit approval. Terms and conditions apply.
             </p>
-            <Link href="/contact#request">
-              <Button 
-                variant="default"
-                size="lg"
-                data-testid="button-get-prequalified"
-              >
-                Get Pre-Qualified Today
-              </Button>
-            </Link>
+            <Button 
+              variant="default"
+              size="lg"
+              data-testid="button-get-prequalified"
+              onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
+            >
+              Get Pre-Qualified Today
+            </Button>
           </div>
         </div>
       </section>
@@ -310,15 +310,14 @@ export default function Financing() {
               <Phone className="w-5 h-5 mr-2" />
               Call for Information
             </Button>
-            <Link href="/contact#request">
-              <Button 
-                variant="secondary"
-                size="lg"
-                data-testid="button-request-quote"
-              >
-                Request Free Quote
-              </Button>
-            </Link>
+            <Button 
+              variant="secondary"
+              size="lg"
+              data-testid="button-request-quote"
+              onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
+            >
+              Request Free Quote
+            </Button>
           </div>
           <p className="text-sm text-gray-500 mt-6">
             All financing subject to credit approval. See store for details.

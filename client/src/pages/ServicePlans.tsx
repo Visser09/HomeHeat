@@ -457,8 +457,9 @@ export default function ServicePlans() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
+              variant="ghost"
               size="lg"
-              className="bg-white text-primary-dark hover:bg-blue-50 font-bold text-lg px-10 py-6 shadow-xl"
+              className="border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-6"
               onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
               data-testid="button-request-service-cta"
             >

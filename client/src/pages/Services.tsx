@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+
+const JOBBER_FORM_URL = 'https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/new?source=social_media';
 import { 
   Flame, 
   Snowflake, 
@@ -151,16 +153,15 @@ export default function Services() {
               From installation to maintenance, we provide comprehensive heating, cooling, 
               and indoor air quality services using only the highest quality equipment and materials.
             </p>
-            <Link href="/contact#request">
-              <Button 
-                variant="secondary"
-                size="lg"
-                data-testid="button-free-quote"
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Get Free Quote
-              </Button>
-            </Link>
+            <Button 
+              variant="secondary"
+              size="lg"
+              data-testid="button-free-quote"
+              onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Get Free Quote
+            </Button>
           </div>
         </div>
       </section>
@@ -214,14 +215,13 @@ export default function Services() {
                         </div>
                         
                         <div className="flex flex-col sm:flex-row gap-4">
-                          <Link href="/contact#request">
-                            <Button 
-                              variant="default"
-                              data-testid={`button-quote-${service.id}`}
-                            >
-                              Get Quote
-                            </Button>
-                          </Link>
+                          <Button 
+                            variant="default"
+                            data-testid={`button-quote-${service.id}`}
+                            onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
+                          >
+                            Get Quote
+                          </Button>
                           <Button 
                             variant="secondary"
                             onClick={() => window.location.href = 'tel:613-925-1039'}
