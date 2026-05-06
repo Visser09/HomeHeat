@@ -11,7 +11,8 @@ import {
   Wrench,
   Calendar,
   Mail,
-  Zap
+  Zap,
+  X
 } from "lucide-react";
 
 import spencer_AC from "@assets/spencer-AC.jpg";
@@ -226,6 +227,82 @@ export default function ServicePlans() {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+      {/* Plan Comparison Table */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-3">Plan Comparison</h2>
+            <p className="text-lg text-gray-custom">See exactly what's included in each plan at a glance.</p>
+          </div>
+
+          <div className="overflow-x-auto rounded-2xl shadow-lg border border-gray-200">
+            <table className="w-full bg-white text-sm">
+              {/* Header */}
+              <thead>
+                <tr>
+                  <th className="text-left p-5 text-gray-custom font-medium w-2/5 border-b border-gray-100">Feature</th>
+                  <th className="p-5 text-center border-b border-gray-100 w-1/5">
+                    <div className="text-base font-bold text-primary-dark">Core</div>
+                    <div className="text-primary font-bold text-lg">$15.95<span className="text-xs font-normal text-gray-400">/mo</span></div>
+                  </th>
+                  <th className="p-5 text-center border-b border-gray-100 bg-primary/5 w-1/5 relative">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                      <span className="bg-primary text-white text-xs font-semibold px-3 py-0.5 rounded-full whitespace-nowrap">Most Popular</span>
+                    </div>
+                    <div className="text-base font-bold text-primary-dark mt-2">Plus</div>
+                    <div className="text-primary font-bold text-lg">$22.95<span className="text-xs font-normal text-gray-400">/mo</span></div>
+                  </th>
+                  <th className="p-5 text-center border-b border-gray-100 w-1/5">
+                    <div className="text-base font-bold text-primary-dark">Elite</div>
+                    <div className="text-primary font-bold text-lg">$28.95<span className="text-xs font-normal text-gray-400">/mo</span></div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { label: "Annual maintenance visit", core: true, plus: true, elite: true },
+                  { label: "Priority scheduling", core: true, plus: true, elite: true },
+                  { label: "Professional inspection & cleaning", core: true, plus: true, elite: true },
+                  { label: "Worry-free appointment reminders", core: true, plus: true, elite: true },
+                  { label: "No diagnostic charges", core: false, plus: true, elite: true },
+                  { label: "24-hour licensed technician support", core: false, plus: true, elite: true },
+                  { label: "No after-hours or overtime charges", core: false, plus: true, elite: true },
+                  { label: "25% off non-warranty parts", core: false, plus: true, elite: false, eliteNote: "100% covered" },
+                  { label: "Multi-system discounts (up to 20% off)", core: false, plus: true, elite: false },
+                  { label: "100% annual maintenance covered", core: false, plus: false, elite: true },
+                  { label: "100% labour coverage (up to 10 yrs)", core: false, plus: false, elite: true },
+                  { label: "100% parts coverage (up to 10 yrs)", core: false, plus: false, elite: true },
+                  { label: "10% off next HVAC system & upgrades", core: false, plus: false, elite: true },
+                ].map((row, i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}>
+                    <td className="p-4 pl-5 text-gray-700 font-medium">{row.label}</td>
+                    <td className="p-4 text-center">
+                      {row.core
+                        ? <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
+                        : <X className="w-5 h-5 text-gray-300 mx-auto" />}
+                    </td>
+                    <td className="p-4 text-center bg-primary/5">
+                      {row.plus
+                        ? <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
+                        : <X className="w-5 h-5 text-gray-300 mx-auto" />}
+                    </td>
+                    <td className="p-4 text-center">
+                      {row.elite ? (
+                        <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
+                      ) : row.eliteNote ? (
+                        <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">{row.eliteNote}</span>
+                      ) : (
+                        <X className="w-5 h-5 text-gray-300 mx-auto" />
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-gray-400 mt-3 text-center">* Non-warranty parts exclude heat exchangers, thermostats, and compressors.</p>
         </div>
       </section>
       {/* Service Request */}
