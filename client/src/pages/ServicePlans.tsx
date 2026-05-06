@@ -294,24 +294,38 @@ export default function ServicePlans() {
         </div>
       </section>
       {/* Call to Action */}
-      <section className="py-16 bg-primary-dark text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6" data-testid="cta-title">
-            Ready to Protect Your Investment?
+      <section className="py-24 bg-gradient-to-br from-primary-dark via-primary to-blue-500 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black bg-opacity-10 pointer-events-none"></div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-block bg-white bg-opacity-20 text-white text-sm font-semibold px-5 py-2 rounded-full mb-6 tracking-wide uppercase">
+            Don't Wait for a Breakdown
+          </div>
+          <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight" data-testid="cta-title">
+            Ready to Protect<br className="hidden sm:block" /> Your Investment?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto" data-testid="cta-description">
-            Don't wait for a breakdown. Join the Comfort Club today and enjoy peace of mind all year long.
+          <p className="text-xl lg:text-2xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed" data-testid="cta-description">
+            Join the Comfort Club today and enjoy <span className="text-white font-semibold">peace of mind all year long</span> — plans starting at just $15.95/month.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              variant="ghost"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button
               size="lg"
-              className="border-2 border-white text-white hover:bg-white/10"
+              className="bg-white text-primary-dark hover:bg-blue-50 font-bold text-lg px-10 py-6 shadow-xl"
               onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
               data-testid="button-request-service-cta"
             >
-              Request Service
+              <Mail className="w-5 h-5 mr-2" />
+              Join the Comfort Club
             </Button>
+            <a href="tel:613-925-1039">
+              <Button
+                variant="ghost"
+                size="lg"
+                className="border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-6"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Call 613-925-1039
+              </Button>
+            </a>
           </div>
         </div>
       </section>
