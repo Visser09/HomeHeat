@@ -228,22 +228,6 @@ export default function ServicePlans() {
           </div>
         </div>
       </section>
-      {/* After 10 Years Note */}
-      <section className="py-10 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="border-0 shadow-sm">
-            <CardContent className="p-8">
-              <h3 className="text-xl font-bold text-primary-dark mb-3">About Comfort Club Elite Coverage</h3>
-              <p className="text-gray-600 mb-3">
-                <strong>After 10 years:</strong> Once your system reaches the 10-year mark, we'll review it on a year-to-year basis to determine continued eligibility for Elite coverage.
-              </p>
-              <p className="text-gray-600">
-                <strong>If your system no longer qualifies:</strong> You can easily move to another Comfort Club plan to continue receiving maintenance and valuable member benefits.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
       {/* Service Request */}
       <section className="py-16 bg-gray-custom">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
