@@ -246,11 +246,8 @@ export default function ServicePlans() {
                     <div className="text-sm font-bold text-primary-dark">Comfort Club Core</div>
                     <div className="text-primary font-bold">$15.95<span className="text-xs font-normal text-gray-400">/mo</span></div>
                   </th>
-                  <th className="p-5 text-center border-b border-gray-100 bg-primary/5 w-1/5 relative">
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <span className="bg-primary text-white text-xs font-semibold px-3 py-0.5 rounded-full whitespace-nowrap">Most Popular</span>
-                    </div>
-                    <div className="text-sm font-bold text-primary-dark mt-2">Comfort Club Plus</div>
+                  <th className="p-5 text-center border-b border-gray-100 bg-primary/5 w-1/5">
+                    <div className="text-sm font-bold text-primary-dark">Comfort Club Plus</div>
                     <div className="text-primary font-bold">$22.95<span className="text-xs font-normal text-gray-400">/mo</span></div>
                   </th>
                   <th className="p-5 text-center border-b border-gray-100 w-1/5">
