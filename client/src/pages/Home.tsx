@@ -19,7 +19,7 @@ import {
   Settings
 } from "lucide-react";
 
-import Screenshot_2025_09_03_103452 from "@assets/Screenshot 2025-09-03 103452.png";
+import logoImage from "@assets/614388688_1500152605198732_6395275072461309092_n_1778086830649.jpg";
 
 const services = [
   {
@@ -132,8 +132,8 @@ export default function Home() {
             </div>
             <div className="hidden lg:block">
               <img 
-                src={Screenshot_2025_09_03_103452} 
-                alt="Professional HVAC technician at work" 
+                src={logoImage} 
+                alt="Hometown Heating Inc Logo" 
                 className="rounded-xl shadow-2xl w-full h-auto"
                 data-testid="hero-image"
               />

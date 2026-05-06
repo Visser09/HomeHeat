@@ -57,9 +57,11 @@ export default function Navigation() {
         <nav className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Link href="/" data-testid="link-home">
-              <div className="font-brand text-2xl font-bold text-primary-dark">
-                HOMETOWN HEATING
-              </div>
+              <img
+                src="/logo.jpg"
+                alt="Hometown Heating Inc"
+                className="h-16 w-auto"
+              />
             </Link>
           </div>
           
