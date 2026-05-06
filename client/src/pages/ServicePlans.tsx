@@ -404,27 +404,6 @@ export default function ServicePlans() {
           </div>
         </div>
       </section>
-      {/* Service Request */}
-      <section className="py-16 bg-gray-custom">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-4" data-testid="request-form-title">
-              Ready to Join the Comfort Club?
-            </h2>
-            <p className="text-xl text-gray-custom max-w-3xl mx-auto mb-8" data-testid="request-form-description">
-              Call us at <a href="tel:613-925-1039" className="text-primary font-semibold">613-925-1039</a> or submit a service request and our team will help you choose the right plan.
-            </p>
-            <Button 
-              size="lg"
-              onClick={() => window.open(JOBBER_FORM_URL, '_blank', 'noopener,noreferrer')}
-              data-testid="button-request-service-plan-external"
-            >
-              <Mail className="w-5 h-5 mr-2" />
-              Request Service Plan
-            </Button>
-          </div>
-        </div>
-      </section>
       {/* Why Choose Service Plans */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
