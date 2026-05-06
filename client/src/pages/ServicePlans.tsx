@@ -120,10 +120,7 @@ export default function ServicePlans() {
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight" data-testid="hero-title">
                 Hometown Heating <span className="text-blue-200">Comfort Club</span>
               </h1>
-              <p className="text-xl mb-8 text-blue-100 leading-relaxed" data-testid="hero-description">
-                Protect your investment with our Comfort Club plans. From essential annual maintenance 
-                to complete 10-year coverage, we have the right plan for your home.
-              </p>
+              <p className="text-xl mb-8 text-blue-100 leading-relaxed" data-testid="hero-description">Protect your investment with our Comfort Club plans. From essential annual maintenance to complete coverage, we have the right plan for your home.</p>
               <div className="flex justify-center">
                 <Button 
                   variant="secondary"
@@ -147,7 +144,6 @@ export default function ServicePlans() {
           </div>
         </div>
       </section>
-
       {/* Plans Overview */}
       <section id="plans" className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -232,7 +228,6 @@ export default function ServicePlans() {
           </div>
         </div>
       </section>
-
       {/* After 10 Years Note */}
       <section className="py-10 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -249,7 +244,6 @@ export default function ServicePlans() {
           </Card>
         </div>
       </section>
-
       {/* Service Request */}
       <section className="py-16 bg-gray-custom">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -271,7 +265,6 @@ export default function ServicePlans() {
           </div>
         </div>
       </section>
-
       {/* Why Choose Service Plans */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -300,7 +293,6 @@ export default function ServicePlans() {
           </div>
         </div>
       </section>
-
       {/* Call to Action */}
       <section className="py-16 bg-primary-dark text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
