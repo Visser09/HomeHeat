@@ -101,6 +101,11 @@ export default function Home() {
         <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
+              <img
+                src={logoImage}
+                alt="Hometown Heating Inc"
+                className="h-32 w-auto mb-6"
+              />
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight" data-testid="hero-title">
                 Professional HVAC Services in <span className="text-blue-200">Prescott, Ontario</span>
               </h1>
@@ -129,14 +134,6 @@ export default function Home() {
                   </Button>
                 </Link>
               </div>
-            </div>
-            <div className="hidden lg:block">
-              <img 
-                src={logoImage} 
-                alt="Hometown Heating Inc Logo" 
-                className="rounded-xl shadow-2xl w-full h-auto"
-                data-testid="hero-image"
-              />
             </div>
           </div>
         </div>
