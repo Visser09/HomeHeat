@@ -202,7 +202,7 @@ export default function Home() {
                 <p className="text-sm text-gray-custom mb-4">Complete 10-year protection</p>
                 <div className="text-3xl font-bold text-primary mb-6">$28.95<span className="text-base font-normal text-gray-custom">/mo</span></div>
                 <div className="space-y-2 text-left text-sm text-gray-600">
-                  {["All Plus plan benefits", "100% maintenance covered", "100% labour coverage (10 yrs)", "100% parts coverage (10 yrs)", "10% off next HVAC system"].map((item, i) => (
+                  {["All Plus plan benefits", "100% maintenance covered", "100% labour coverage (10 yrs)", "100% parts coverage (10 yrs)", "10% off next HVAC system", "$500 equipment upgrade credit"].map((item, i) => (
                     <div key={i} className="flex items-start">
                       <CheckCircle className="text-primary mt-0.5 mr-2 w-4 h-4 flex-shrink-0" />
                       <span>{item}</span>
