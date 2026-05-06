@@ -6,105 +6,104 @@ import {
   Clock, 
   Phone, 
   DollarSign, 
-  Users,
   Star,
   Award,
   Wrench,
-  Home,
-  Timer,
-  Mail
+  Calendar,
+  Mail,
+  Zap
 } from "lucide-react";
 
 import spencer_AC from "@assets/spencer-AC.jpg";
 
 const JOBBER_FORM_URL = 'https://clienthub.getjobber.com/client_hubs/477b530d-4299-4b26-a9f2-f6059a7649f1/public/work_request/new?source=social_media';
 
-const basicPlanFeatures = [
+const corePlanFeatures = [
   {
     icon: Wrench,
     title: "Annual Maintenance",
-    description: "Complete system inspection, cleaning, and tune-up to keep your equipment running efficiently"
+    description: "Annual maintenance for your heating and/or cooling system — inspection, cleaning, and tune-up"
   },
   {
-    icon: Shield,
-    title: "Safety Inspection",
-    description: "Comprehensive safety check including gas connections, electrical components, and ventilation"
+    icon: Calendar,
+    title: "Priority Scheduling",
+    description: "Priority scheduling for service appointments — your next visit is booked on-site by your technician"
   },
   {
-    icon: Timer,
-    title: "Filter Replacement",
-    description: "High-quality filter replacement to improve air quality and system efficiency"
+    icon: CheckCircle,
+    title: "Professional Inspection",
+    description: "Professional inspection and cleaning of key system components"
   },
   {
-    icon: Phone,
-    title: "Service Report",
-    description: "Detailed written report with recommendations for optimal system performance"
+    icon: Zap,
+    title: "Improved Efficiency",
+    description: "Improved system efficiency and performance, extending equipment life and reducing unexpected breakdowns"
   }
 ];
 
-const comfortClubFeatures = [
+const plusPlanFeatures = [
   {
     icon: Star,
     title: "No Diagnostic Charges",
-    description: "Free troubleshooting and system analysis - saving you money on service calls"
+    description: "No diagnostic charges on service calls — free troubleshooting every time"
   },
   {
     icon: Phone,
     title: "24-Hour Phone Support",
-    description: "Licensed technician available anytime for emergency assistance and advice"
+    description: "24-hour phone support with a licensed technician, anytime you need it"
   },
   {
     icon: DollarSign,
     title: "25% Off Non-Warranty Parts",
-    description: "Exclusive discount on parts (excluding heat exchangers, thermostats, and compressors)"
+    description: "25% off all non-warranty parts (excluding heat exchangers, thermostats, and compressors)"
   },
   {
     icon: Clock,
-    title: "No Overtime Charges",
-    description: "Emergency service calls at regular rates - even nights and weekends"
+    title: "No After-Hours Charges",
+    description: "No after-hours or overtime charges — regular rates always apply"
   },
   {
     icon: Award,
-    title: "Comfort Club Discounts",
-    description: "10% off two items, 20% off three items, 25% off four or more items"
-  },
-  {
-    icon: Shield,
-    title: "Annual Maintenance Included",
-    description: "Complete system inspection and maintenance to prevent breakdowns"
+    title: "Multi-System Savings",
+    description: "10% off two systems, 15% off three systems, 20% off four or more systems"
   }
 ];
 
-const plan110Features = [
+const elitePlanFeatures = [
+  {
+    icon: Star,
+    title: "No Diagnostic Charges",
+    description: "No diagnostic charges on service calls"
+  },
+  {
+    icon: Phone,
+    title: "24-Hour Phone Support",
+    description: "24-hour phone support with a licensed technician"
+  },
+  {
+    icon: Clock,
+    title: "No After-Hours Charges",
+    description: "No after-hours or overtime charges — regular rates always apply"
+  },
   {
     icon: Shield,
-    title: "100% Annual Maintenance",
-    description: "Complete maintenance coverage with no additional costs"
+    title: "100% Maintenance Covered",
+    description: "100% of your annual maintenance covered — no additional cost"
   },
   {
     icon: Wrench,
     title: "100% Labour Coverage",
-    description: "All labour costs covered for repairs until your unit is 10 years old"
+    description: "100% labour coverage on all repairs for up to 10 years"
+  },
+  {
+    icon: CheckCircle,
+    title: "100% Parts Coverage",
+    description: "100% parts coverage for up to 10 years"
   },
   {
     icon: DollarSign,
-    title: "100% Parts Coverage",
-    description: "All parts covered until your unit is 10 years old"
-  },
-  {
-    icon: Home,
-    title: "100% Transferable",
-    description: "Fully transferable to new homeowners if the house is sold"
-  },
-  {
-    icon: Star,
     title: "10% Off Next HVAC System",
-    description: "Discount on your next complete HVAC system purchase"
-  },
-  {
-    icon: Award,
-    title: "10% Off Add-ons",
-    description: "Discount on add-ons to your current HVAC system"
+    description: "10% off your next HVAC system and 10% off system upgrades and add-ons"
   }
 ];
 
@@ -119,11 +118,11 @@ export default function ServicePlans() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight" data-testid="hero-title">
-                Hometown Heating <span className="text-blue-200">Service Plans</span>
+                Hometown Heating <span className="text-blue-200">Comfort Club</span>
               </h1>
               <p className="text-xl mb-8 text-blue-100 leading-relaxed" data-testid="hero-description">
-                Protect your investment with our comprehensive service plans. From basic maintenance 
-                to complete coverage, we have the perfect plan for your needs.
+                Protect your investment with our Comfort Club plans. From essential annual maintenance 
+                to complete 10-year coverage, we have the right plan for your home.
               </p>
               <div className="flex justify-center">
                 <Button 
@@ -148,30 +147,31 @@ export default function ServicePlans() {
           </div>
         </div>
       </section>
+
       {/* Plans Overview */}
       <section id="plans" className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-4" data-testid="plans-title">
-              Choose Your Perfect Service Plan
+              Choose Your Comfort Club Plan
             </h2>
             <p className="text-xl text-gray-custom max-w-3xl mx-auto" data-testid="plans-description">
-              Whether you need basic maintenance or complete coverage, we have a plan that fits your needs and budget.
+              All plans include worry-free scheduling — your next appointment is booked on-site and we'll send a reminder so you never have to think about it.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Basic Plan */}
-            <Card id="basic-plan" className="hover:shadow-lg transition-shadow border-2">
+            {/* Comfort Club Core */}
+            <Card id="core-plan" className="hover:shadow-lg transition-shadow border-2">
               <CardHeader className="text-center pb-4">
-                <CardTitle className="text-2xl font-bold text-primary-dark">Basic Plan</CardTitle>
+                <CardTitle className="text-2xl font-bold text-primary-dark">Comfort Club Core</CardTitle>
                 <p className="text-gray-custom">Essential annual maintenance</p>
-                <div className="text-3xl font-bold text-primary mt-4">Starting at $159</div>
+                <div className="text-3xl font-bold text-primary mt-4">$15.95<span className="text-lg font-normal text-gray-custom">/month</span></div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4 mb-6">
-                  {basicPlanFeatures.map((feature, index) => (
-                    <div key={index} className="flex items-start" data-testid={`basic-feature-${index}`}>
+                  {corePlanFeatures.map((feature, index) => (
+                    <div key={index} className="flex items-start" data-testid={`core-feature-${index}`}>
                       <feature.icon className="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold text-sm">{feature.title}</h4>
@@ -183,17 +183,20 @@ export default function ServicePlans() {
               </CardContent>
             </Card>
 
-            {/* Comfort Club */}
-            <Card id="comfort-club" className="hover:shadow-lg transition-shadow border-2">
-              <CardHeader className="text-center pb-4">
-                <CardTitle className="text-2xl font-bold text-primary-dark">Comfort Club</CardTitle>
-                <p className="text-gray-custom">Premium service and savings</p>
-                <div className="text-3xl font-bold text-primary mt-4">Starting at $205</div>
+            {/* Comfort Club Plus */}
+            <Card id="plus-plan" className="hover:shadow-lg transition-shadow border-2 border-primary relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span className="bg-primary text-white text-sm font-semibold px-4 py-1 rounded-full">Most Popular</span>
+              </div>
+              <CardHeader className="text-center pb-4 pt-6">
+                <CardTitle className="text-2xl font-bold text-primary-dark">Comfort Club Plus</CardTitle>
+                <p className="text-gray-custom">Priority service and savings</p>
+                <div className="text-3xl font-bold text-primary mt-4">$22.95<span className="text-lg font-normal text-gray-custom">/month</span></div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4 mb-6">
-                  {comfortClubFeatures.map((feature, index) => (
-                    <div key={index} className="flex items-start" data-testid={`comfort-feature-${index}`}>
+                  {plusPlanFeatures.map((feature, index) => (
+                    <div key={index} className="flex items-start" data-testid={`plus-feature-${index}`}>
                       <feature.icon className="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold text-sm">{feature.title}</h4>
@@ -205,17 +208,17 @@ export default function ServicePlans() {
               </CardContent>
             </Card>
 
-            {/* 110 Plan */}
-            <Card id="110-plan" className="hover:shadow-lg transition-shadow border-2">
+            {/* Comfort Club Elite */}
+            <Card id="elite-plan" className="hover:shadow-lg transition-shadow border-2">
               <CardHeader className="text-center pb-4">
-                <CardTitle className="text-2xl font-bold text-primary-dark">110 Plan</CardTitle>
-                <p className="text-gray-custom">Complete 10-year coverage</p>
-                <div className="text-3xl font-bold text-primary mt-4">Starting at $22.95/m</div>
+                <CardTitle className="text-2xl font-bold text-primary-dark">Comfort Club Elite</CardTitle>
+                <p className="text-gray-custom">Complete 10-year protection</p>
+                <div className="text-3xl font-bold text-primary mt-4">$28.95<span className="text-lg font-normal text-gray-custom">/month</span></div>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4 mb-6">
-                  {plan110Features.map((feature, index) => (
-                    <div key={index} className="flex items-start" data-testid={`110-feature-${index}`}>
+                  {elitePlanFeatures.map((feature, index) => (
+                    <div key={index} className="flex items-start" data-testid={`elite-feature-${index}`}>
                       <feature.icon className="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold text-sm">{feature.title}</h4>
@@ -229,15 +232,33 @@ export default function ServicePlans() {
           </div>
         </div>
       </section>
-      {/* Service Request Form */}
+
+      {/* After 10 Years Note */}
+      <section className="py-10 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="border-0 shadow-sm">
+            <CardContent className="p-8">
+              <h3 className="text-xl font-bold text-primary-dark mb-3">About Comfort Club Elite Coverage</h3>
+              <p className="text-gray-600 mb-3">
+                <strong>After 10 years:</strong> Once your system reaches the 10-year mark, we'll review it on a year-to-year basis to determine continued eligibility for Elite coverage.
+              </p>
+              <p className="text-gray-600">
+                <strong>If your system no longer qualifies:</strong> You can easily move to another Comfort Club plan to continue receiving maintenance and valuable member benefits.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Service Request */}
       <section className="py-16 bg-gray-custom">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-4" data-testid="request-form-title">
-              Request Your Service Plan
+              Ready to Join the Comfort Club?
             </h2>
             <p className="text-xl text-gray-custom max-w-3xl mx-auto mb-8" data-testid="request-form-description">
-              Ready to get started? Click below to access our service request form and our team will contact you to discuss your service plan options and schedule your consultation.
+              Call us at <a href="tel:613-925-1039" className="text-primary font-semibold">613-925-1039</a> or submit a service request and our team will help you choose the right plan.
             </p>
             <Button 
               size="lg"
@@ -250,12 +271,13 @@ export default function ServicePlans() {
           </div>
         </div>
       </section>
+
       {/* Why Choose Service Plans */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-4" data-testid="why-choose-title">
-              Why Choose a Service Plan?
+              Why Choose a Comfort Club Plan?
             </h2>
           </div>
 
@@ -278,6 +300,7 @@ export default function ServicePlans() {
           </div>
         </div>
       </section>
+
       {/* Call to Action */}
       <section className="py-16 bg-primary-dark text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -285,7 +308,7 @@ export default function ServicePlans() {
             Ready to Protect Your Investment?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto" data-testid="cta-description">
-            Don't wait for a breakdown. Choose a service plan today and enjoy peace of mind all year long.
+            Don't wait for a breakdown. Join the Comfort Club today and enjoy peace of mind all year long.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 

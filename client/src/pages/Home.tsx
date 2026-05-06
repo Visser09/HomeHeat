@@ -153,72 +153,76 @@ export default function Home() {
               Join the Hometown Heating Comfort Club
             </h2>
             <p className="text-xl text-gray-custom max-w-3xl mx-auto" data-testid="comfort-club-description">
-              Protect your investment with our comprehensive maintenance program. 
-              Get priority service, exclusive discounts, and peace of mind.
+              Three plans to fit every home and budget — from essential annual maintenance to complete 10-year coverage.
             </p>
           </div>
-          
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <img 
-                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
-                alt="Happy family in comfortable home environment" 
-                className="rounded-xl shadow-lg w-full h-auto"
-                data-testid="comfort-club-image"
-              />
-            </div>
-            <div>
-              <Card className="bg-primary-light bg-opacity-10 border-0 mb-8">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-primary-dark mb-6" data-testid="comfort-club-benefits-title">
-                    Comfort Club Benefits
-                  </h3>
-                  <div className="space-y-4">
-                    {[
-                      { title: "Priority Service", desc: "Skip the line - members get scheduled first" },
-                      { title: "Annual Maintenance", desc: "Comprehensive system inspection and tune-up" },
-                      { title: "25% Off Parts", desc: "Exclusive discount on non-warranty parts" },
-                      { title: "No Diagnostic Fees", desc: "Free troubleshooting and system analysis" },
-                      { title: "24/7 Phone Support", desc: "Licensed technician available anytime" }
-                    ].map((benefit, index) => (
-                      <div key={index} className="flex items-start" data-testid={`comfort-club-benefit-${index}`}>
-                        <CheckCircle className="text-primary mt-1 mr-3 w-5 h-5 flex-shrink-0" />
-                        <div>
-                          <p className="font-semibold">{benefit.title}</p>
-                          <p className="text-sm text-gray-600">{benefit.desc}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                <Card className="bg-green-50 border-green-200">
-                  <CardContent className="p-4 text-center">
-                    <div className="text-2xl font-bold text-green-700" data-testid="pricing-single">$205</div>
-                    <div className="text-sm text-green-600">Single System</div>
-                  </CardContent>
-                </Card>
-                <Card className="bg-blue-50 border-blue-200">
-                  <CardContent className="p-4 text-center">
-                    <div className="text-2xl font-bold text-blue-700" data-testid="pricing-multiple">Save 25%</div>
-                    <div className="text-sm text-blue-600">4+ Systems</div>
-                  </CardContent>
-                </Card>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-10">
+            {/* Core */}
+            <Card className="border-2 text-center hover:shadow-lg transition-shadow">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold text-primary-dark mb-1">Comfort Club Core</h3>
+                <p className="text-sm text-gray-custom mb-4">Essential annual maintenance</p>
+                <div className="text-3xl font-bold text-primary mb-6">$15.95<span className="text-base font-normal text-gray-custom">/mo</span></div>
+                <div className="space-y-2 text-left text-sm text-gray-600">
+                  {["Annual maintenance visit", "Priority scheduling", "Professional inspection & cleaning", "Worry-free appointment reminders"].map((item, i) => (
+                    <div key={i} className="flex items-start">
+                      <CheckCircle className="text-primary mt-0.5 mr-2 w-4 h-4 flex-shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Plus */}
+            <Card className="border-2 border-primary text-center hover:shadow-lg transition-shadow relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span className="bg-primary text-white text-xs font-semibold px-4 py-1 rounded-full">Most Popular</span>
               </div>
-              
-              <Link href="/comfort-club">
-                <Button 
-                  variant="default"
-                  size="lg"
-                  className="w-full"
-                  data-testid="button-join-comfort-club"
-                >
-                  Join Comfort Club Today
-                </Button>
-              </Link>
-            </div>
+              <CardContent className="p-8 pt-10">
+                <h3 className="text-xl font-bold text-primary-dark mb-1">Comfort Club Plus</h3>
+                <p className="text-sm text-gray-custom mb-4">Priority service and savings</p>
+                <div className="text-3xl font-bold text-primary mb-6">$22.95<span className="text-base font-normal text-gray-custom">/mo</span></div>
+                <div className="space-y-2 text-left text-sm text-gray-600">
+                  {["No diagnostic charges", "24-hour licensed tech support", "25% off non-warranty parts", "No after-hours charges", "Multi-system discounts up to 20%"].map((item, i) => (
+                    <div key={i} className="flex items-start">
+                      <CheckCircle className="text-primary mt-0.5 mr-2 w-4 h-4 flex-shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Elite */}
+            <Card className="border-2 text-center hover:shadow-lg transition-shadow">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold text-primary-dark mb-1">Comfort Club Elite</h3>
+                <p className="text-sm text-gray-custom mb-4">Complete 10-year protection</p>
+                <div className="text-3xl font-bold text-primary mb-6">$28.95<span className="text-base font-normal text-gray-custom">/mo</span></div>
+                <div className="space-y-2 text-left text-sm text-gray-600">
+                  {["All Plus plan benefits", "100% maintenance covered", "100% labour coverage (10 yrs)", "100% parts coverage (10 yrs)", "10% off next HVAC system"].map((item, i) => (
+                    <div key={i} className="flex items-start">
+                      <CheckCircle className="text-primary mt-0.5 mr-2 w-4 h-4 flex-shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Link href="/comfort-club">
+              <Button 
+                variant="default"
+                size="lg"
+                data-testid="button-join-comfort-club"
+              >
+                View All Comfort Club Plans
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
