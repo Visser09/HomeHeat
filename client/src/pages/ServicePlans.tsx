@@ -12,7 +12,8 @@ import {
   Calendar,
   Mail,
   Zap,
-  X
+  X,
+  Gift
 } from "lucide-react";
 
 import spencer_AC from "@assets/spencer-AC.jpg";
@@ -67,6 +68,11 @@ const plusPlanFeatures = [
     icon: Award,
     title: "Multi-System Savings",
     description: "10% off two systems, 15% off three systems, 20% off four or more systems"
+  },
+  {
+    icon: Gift,
+    title: "$250 Equipment Upgrade Credit",
+    description: "Apply a $250 credit toward any new furnace, AC, heat pump, or IAQ product"
   }
 ];
 
