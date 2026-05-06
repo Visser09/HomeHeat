@@ -28,37 +28,43 @@ const services = [
     icon: Flame,
     title: "Furnaces",
     description: "High-efficiency gas, propane, and electric furnaces from trusted brands. Professional installation and service guaranteed.",
-    features: ["Energy-efficient models", "Professional installation", "Warranty protection", "24/7 service support"]
+    features: ["Energy-efficient models", "Professional installation", "Warranty protection", "24/7 service support"],
+    link: "/services#furnaces"
   },
   {
     icon: Snowflake,
     title: "Air Conditioning",
     description: "Stay cool with our central air conditioning systems. Energy-efficient solutions for ultimate comfort.",
-    features: ["Central AC systems", "Ductless mini-splits", "Energy Star certified", "Professional maintenance"]
+    features: ["Central AC systems", "Ductless mini-splits", "Energy Star certified", "Professional maintenance"],
+    link: "/services#ac"
   },
   {
     icon: RefreshCw,
     title: "Heat Pumps",
     description: "Efficient year-round comfort with advanced heat pump technology. Heating and cooling in one system.",
-    features: ["Split system heat pumps", "Geothermal systems", "Ductless options", "Federal tax credits available"]
+    features: ["Split system heat pumps", "Geothermal systems", "Ductless options", "Federal tax credits available"],
+    link: "/services#heat-pumps"
   },
   {
     icon: Droplet,
     title: "Water Heaters",
     description: "Reliable hot water solutions including traditional tanks and energy-efficient tankless systems.",
-    features: ["Traditional tank heaters", "Tankless systems", "15-year warranty available", "Space-saving designs"]
+    features: ["Traditional tank heaters", "Tankless systems", "15-year warranty available", "Space-saving designs"],
+    link: "/services#water-heaters"
   },
   {
     icon: Wind,
     title: "Indoor Air Quality",
     description: "Breathe easier with our HRV systems and air quality solutions. Fresh, filtered air for your family's health.",
-    features: ["HRV and ERV systems", "Air purifiers", "Humidity control", "Filter replacement"]
+    features: ["HRV and ERV systems", "Air purifiers", "Humidity control", "Filter replacement"],
+    link: "/services#indoor-air"
   },
   {
     icon: Thermometer,
     title: "Radiant Floor Heating",
     description: "Experience ultimate comfort with radiant floor heating systems. Even, efficient warmth throughout your home.",
-    features: ["Electric systems", "Hydronic systems", "Custom installations", "Energy efficient"]
+    features: ["Electric systems", "Hydronic systems", "Custom installations", "Energy efficient"],
+    link: "/services#radiant"
   }
 ];
 
@@ -251,12 +257,14 @@ export default function Home() {
                       <li key={fIndex}>• {feature}</li>
                     ))}
                   </ul>
-                  <Button 
-                    variant="link" 
-                    data-testid={`service-learn-more-${index}`}
-                  >
-                    Learn More →
-                  </Button>
+                  <Link href={service.link}>
+                    <Button 
+                      variant="link" 
+                      data-testid={`service-learn-more-${index}`}
+                    >
+                      Learn More →
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
