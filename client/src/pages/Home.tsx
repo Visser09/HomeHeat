@@ -185,7 +185,7 @@ export default function Home() {
                 <p className="text-sm text-gray-custom mb-4">Priority service and savings</p>
                 <div className="text-3xl font-bold text-primary mb-6">$22.95<span className="text-base font-normal text-gray-custom">/mo</span></div>
                 <div className="space-y-2 text-left text-sm text-gray-600">
-                  {["All Core plan benefits", "No diagnostic charges", "24-hour licensed tech support", "25% off non-warranty parts", "No after-hours charges", "Multi-system discounts up to 20%"].map((item, i) => (
+                  {["All Core plan benefits", "No diagnostic charges", "24-hour licensed tech support", "25% off non-warranty parts", "No after-hours charges", "Multi-system discounts up to 20%", "$250 equipment upgrade credit"].map((item, i) => (
                     <div key={i} className="flex items-start">
                       <CheckCircle className="text-primary mt-0.5 mr-2 w-4 h-4 flex-shrink-0" />
                       <span>{item}</span>
