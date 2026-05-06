@@ -152,9 +152,7 @@ export default function Home() {
             <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-4" data-testid="comfort-club-title">
               Join the Hometown Heating Comfort Club
             </h2>
-            <p className="text-xl text-gray-custom max-w-3xl mx-auto" data-testid="comfort-club-description">
-              Three plans to fit every home and budget — from essential annual maintenance to complete 10-year coverage.
-            </p>
+            <p className="text-xl text-gray-custom max-w-3xl mx-auto" data-testid="comfort-club-description">Three plans to fit every home and budget — from essential annual maintenance to complete coverage.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-10">
