@@ -393,10 +393,6 @@ export default function ServicePlans() {
                 <p className="text-gray-600">Designed for homeowners who want <strong>complete coverage, no surprise costs, and total peace of mind.</strong></p>
               </div>
             </div>
-            <div className="mt-8 pt-6 border-t border-gray-100 flex items-center gap-3 text-gray-700">
-              <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-              <p>Contact Hometown Heating today at <a href="tel:613-925-1039" className="font-semibold text-primary">613-925-1039</a> to choose the plan that's right for you.</p>
-            </div>
           </div>
         </div>
       </section>
