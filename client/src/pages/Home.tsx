@@ -130,6 +130,16 @@ export default function Home() {
                 </Link>
               </div>
             </div>
+            <div className="hidden lg:flex items-center justify-center">
+              <div className="bg-white rounded-xl shadow-2xl p-8">
+                <img
+                  src={logoImage}
+                  alt="Hometown Heating Inc"
+                  className="w-full h-auto max-w-xs"
+                  data-testid="hero-image"
+                />
+              </div>
+            </div>
           </div>
         </div>
         
