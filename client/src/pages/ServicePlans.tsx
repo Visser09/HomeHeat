@@ -233,76 +233,171 @@ export default function ServicePlans() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-3">Plan Comparison</h2>
-            <p className="text-lg text-gray-custom">See exactly what's included in each plan at a glance.</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-2">Comfort Club Plans Comparison</h2>
+            <p className="text-lg text-gray-custom">Find the Right Plan for Your Home Comfort Needs</p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl shadow-lg border border-gray-200">
+          <div className="overflow-x-auto rounded-2xl shadow-lg border border-gray-200 mb-10">
             <table className="w-full bg-white text-sm">
-              {/* Header */}
               <thead>
                 <tr>
-                  <th className="text-left p-5 text-gray-custom font-medium w-2/5 border-b border-gray-100">Feature</th>
+                  <th className="text-left p-5 text-gray-500 font-medium w-2/5 border-b border-gray-100">Feature</th>
                   <th className="p-5 text-center border-b border-gray-100 w-1/5">
-                    <div className="text-base font-bold text-primary-dark">Core</div>
-                    <div className="text-primary font-bold text-lg">$15.95<span className="text-xs font-normal text-gray-400">/mo</span></div>
+                    <div className="text-sm font-bold text-primary-dark">Comfort Club Core</div>
+                    <div className="text-primary font-bold">$15.95<span className="text-xs font-normal text-gray-400">/mo</span></div>
                   </th>
                   <th className="p-5 text-center border-b border-gray-100 bg-primary/5 w-1/5 relative">
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                       <span className="bg-primary text-white text-xs font-semibold px-3 py-0.5 rounded-full whitespace-nowrap">Most Popular</span>
                     </div>
-                    <div className="text-base font-bold text-primary-dark mt-2">Plus</div>
-                    <div className="text-primary font-bold text-lg">$22.95<span className="text-xs font-normal text-gray-400">/mo</span></div>
+                    <div className="text-sm font-bold text-primary-dark mt-2">Comfort Club Plus</div>
+                    <div className="text-primary font-bold">$22.95<span className="text-xs font-normal text-gray-400">/mo</span></div>
                   </th>
                   <th className="p-5 text-center border-b border-gray-100 w-1/5">
-                    <div className="text-base font-bold text-primary-dark">Elite</div>
-                    <div className="text-primary font-bold text-lg">$28.95<span className="text-xs font-normal text-gray-400">/mo</span></div>
+                    <div className="text-sm font-bold text-primary-dark">Comfort Club Elite</div>
+                    <div className="text-primary font-bold">$28.95<span className="text-xs font-normal text-gray-400">/mo</span></div>
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {[
-                  { label: "Annual maintenance visit", core: true, plus: true, elite: true },
-                  { label: "Priority scheduling", core: true, plus: true, elite: true },
-                  { label: "Professional inspection & cleaning", core: true, plus: true, elite: true },
-                  { label: "Worry-free appointment reminders", core: true, plus: true, elite: true },
-                  { label: "No diagnostic charges", core: false, plus: true, elite: true },
-                  { label: "24-hour licensed technician support", core: false, plus: true, elite: true },
-                  { label: "No after-hours or overtime charges", core: false, plus: true, elite: true },
-                  { label: "25% off non-warranty parts", core: false, plus: true, elite: false, eliteNote: "100% covered" },
-                  { label: "Multi-system discounts (up to 20% off)", core: false, plus: true, elite: false },
-                  { label: "100% annual maintenance covered", core: false, plus: false, elite: true },
-                  { label: "100% labour coverage (up to 10 yrs)", core: false, plus: false, elite: true },
-                  { label: "100% parts coverage (up to 10 yrs)", core: false, plus: false, elite: true },
-                  { label: "10% off next HVAC system & upgrades", core: false, plus: false, elite: true },
-                ].map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}>
-                    <td className="p-4 pl-5 text-gray-700 font-medium">{row.label}</td>
-                    <td className="p-4 text-center">
-                      {row.core
-                        ? <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
-                        : <X className="w-5 h-5 text-gray-300 mx-auto" />}
-                    </td>
-                    <td className="p-4 text-center bg-primary/5">
-                      {row.plus
-                        ? <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
-                        : <X className="w-5 h-5 text-gray-300 mx-auto" />}
-                    </td>
-                    <td className="p-4 text-center">
-                      {row.elite ? (
-                        <CheckCircle className="w-5 h-5 text-green-500 mx-auto" />
-                      ) : row.eliteNote ? (
-                        <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">{row.eliteNote}</span>
+                {([
+                  {
+                    label: "Annual Maintenance",
+                    core:  { check: true,  text: "Included" },
+                    plus:  { check: true,  text: "Included" },
+                    elite: { check: true,  text: "100% Covered" },
+                  },
+                  {
+                    label: "Priority Scheduling",
+                    core:  { check: true },
+                    plus:  { check: true },
+                    elite: { check: true },
+                  },
+                  {
+                    label: "Diagnostic Charges",
+                    core:  { dash: true },
+                    plus:  { check: true,  text: "No Charge" },
+                    elite: { check: true,  text: "No Charge" },
+                  },
+                  {
+                    label: "24/7 Phone Support",
+                    core:  { dash: true },
+                    plus:  { check: true },
+                    elite: { check: true },
+                  },
+                  {
+                    label: "After-Hours Fees",
+                    core:  { text: "Standard Rates Apply" },
+                    plus:  { check: true,  text: "No Extra Charges" },
+                    elite: { check: true,  text: "No Extra Charges" },
+                  },
+                  {
+                    label: "Parts Discount",
+                    core:  { dash: true },
+                    plus:  { check: true,  text: "25% Off" },
+                    elite: { check: true,  text: "25% Off" },
+                  },
+                  {
+                    label: "Labour Coverage",
+                    core:  { dash: true },
+                    plus:  { dash: true },
+                    elite: { check: true,  text: "100% (up to 10 years)" },
+                  },
+                  {
+                    label: "Parts Coverage",
+                    core:  { dash: true },
+                    plus:  { dash: true },
+                    elite: { check: true,  text: "100% (up to 10 years)" },
+                  },
+                  {
+                    label: "Maintenance Cost",
+                    core:  { text: "Included" },
+                    plus:  { text: "Included" },
+                    elite: { check: true,  text: "100% Covered" },
+                  },
+                  {
+                    label: "Equipment Upgrade Credit",
+                    core:  { dash: true },
+                    plus:  { check: true,  text: "$250" },
+                    elite: { check: true,  text: "$500" },
+                  },
+                  {
+                    label: "System Replacement Discount",
+                    core:  { dash: true },
+                    plus:  { dash: true },
+                    elite: { check: true,  text: "10% Off" },
+                  },
+                  {
+                    label: "Add-On / Upgrade Discount",
+                    core:  { dash: true },
+                    plus:  { dash: true },
+                    elite: { check: true,  text: "10% Off" },
+                  },
+                  {
+                    label: "Multi-System Savings",
+                    core:  { dash: true },
+                    plus:  { check: true,  text: "Up to 20% Off" },
+                    elite: { check: true,  text: "Up to 20% Off" },
+                  },
+                ] as Array<{
+                  label: string;
+                  core: { check?: boolean; text?: string; dash?: boolean };
+                  plus: { check?: boolean; text?: string; dash?: boolean };
+                  elite: { check?: boolean; text?: string; dash?: boolean };
+                }>).map((row, i) => {
+                  const renderCell = (cell: { check?: boolean; text?: string; dash?: boolean }, highlight = false) => (
+                    <td className={`p-4 text-center ${highlight ? "bg-primary/5" : ""}`}>
+                      {cell.dash ? (
+                        <span className="text-gray-400 font-bold text-lg">—</span>
+                      ) : cell.check ? (
+                        <span className="inline-flex items-center justify-center gap-1 text-green-600 font-medium">
+                          <CheckCircle className="w-4 h-4 flex-shrink-0" />
+                          {cell.text && <span>{cell.text}</span>}
+                        </span>
                       ) : (
-                        <X className="w-5 h-5 text-gray-300 mx-auto" />
+                        <span className="text-gray-500 text-xs">{cell.text}</span>
                       )}
                     </td>
-                  </tr>
-                ))}
+                  );
+                  return (
+                    <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50/40"}>
+                      <td className="p-4 pl-5 text-gray-700 font-semibold">{row.label}</td>
+                      {renderCell(row.core)}
+                      {renderCell(row.plus, true)}
+                      {renderCell(row.elite)}
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-gray-400 mt-3 text-center">* Non-warranty parts exclude heat exchangers, thermostats, and compressors.</p>
+
+          {/* Which Plan is Right for You */}
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+            <h3 className="text-2xl font-bold text-primary-dark mb-6">Which Plan is Right for You?</h3>
+            <div className="space-y-5">
+              <div>
+                <h4 className="text-lg font-bold text-primary-dark mb-1">Comfort Club Core</h4>
+                <p className="text-gray-600">Best for homeowners who want <strong>reliable annual maintenance</strong> and improved system performance.</p>
+              </div>
+              <div className="border-t border-gray-100 pt-5">
+                <h4 className="text-lg font-bold text-primary-dark mb-1 flex items-center gap-2">
+                  Comfort Club Plus <span className="text-yellow-500">⭐</span> <span className="text-primary italic font-semibold">Most Popular</span>
+                </h4>
+                <p className="text-gray-600">Perfect for those who want <strong>priority service, repair savings, and added protection.</strong></p>
+              </div>
+              <div className="border-t border-gray-100 pt-5">
+                <h4 className="text-lg font-bold text-primary-dark mb-1 flex items-center gap-2">
+                  Comfort Club Elite <span>🛡️</span> <span className="text-primary italic font-semibold">Best Value</span>
+                </h4>
+                <p className="text-gray-600">Designed for homeowners who want <strong>complete coverage, no surprise costs, and total peace of mind.</strong></p>
+              </div>
+            </div>
+            <div className="mt-8 pt-6 border-t border-gray-100 flex items-center gap-3 text-gray-700">
+              <Phone className="w-5 h-5 text-primary flex-shrink-0" />
+              <p>Contact Hometown Heating today at <a href="tel:613-925-1039" className="font-semibold text-primary">613-925-1039</a> to choose the plan that's right for you.</p>
+            </div>
+          </div>
         </div>
       </section>
       {/* Service Request */}
