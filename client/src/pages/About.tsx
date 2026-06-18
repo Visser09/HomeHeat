@@ -96,6 +96,41 @@ export default function About() {
           </div>
         </div>
       </section>
+      {/* Mission & Values */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-4" data-testid="mission-title">
+              Our Mission & Values
+            </h2>
+            <p className="text-xl text-gray-custom max-w-3xl mx-auto mb-2" data-testid="mission-description">
+              To provide trusted heating, cooling, and home comfort solutions through exceptional service, expert craftsmanship, and a commitment to our customers and community.
+            </p>
+            <p className="text-gray-custom max-w-2xl mx-auto mb-10 italic" data-testid="mission-vision">
+              Our vision is to be the most trusted and respected home comfort company in the communities we serve.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "Customer First", description: "We treat every home as if it were our own and provide solutions that serve the customer's needs." },
+              { title: "Integrity Always", description: "We are honest, transparent, and stand behind our recommendations, pricing, and workmanship." },
+              { title: "Craftsmanship", description: "We take pride in doing the job right with quality workmanship and attention to detail." },
+              { title: "Accountability", description: "We follow through on our commitments and take ownership of our work." },
+              { title: "Team Before Self", description: "We support each other because strong teams create better customer experiences." },
+              { title: "Continuous Improvement", description: "We keep learning and improving so we can better serve our customers." },
+              { title: "Safety Matters", description: "We prioritize the safety of our employees, customers, and community." },
+              { title: "Community Commitment", description: "We are proud to serve our local communities and build lasting relationships." },
+            ].map((value, index) => (
+              <Card key={index} data-testid={`value-card-${index}`}>
+                <CardContent className="p-5">
+                  <h3 className="font-bold text-primary-dark mb-2">{value.title}</h3>
+                  <p className="text-gray-custom text-sm">{value.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Why Choose Us */}
       <section className="py-16 bg-gray-custom">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -170,12 +205,12 @@ export default function About() {
               </h2>
               <div className="space-y-4 mb-8">
                 {[
-                  "Honest, upfront pricing with no hidden fees",
+                  "Honest advice and clear options before any recommendation",
+                  "Solutions based on the root cause, not pressure sales",
                   "Quality workmanship backed by our satisfaction guarantee",
-                  "Ongoing training on the latest HVAC technologies",
                   "Respectful treatment of your home and property",
                   "Clear communication throughout every project",
-                  "Follow-up service to ensure your complete satisfaction"
+                  "Guidance to help prevent future comfort issues"
                 ].map((commitment, index) => (
                   <div key={index} className="flex items-start" data-testid={`commitment-${index}`}>
                     <CheckCircle className="text-primary mt-1 mr-3 w-5 h-5 flex-shrink-0" />

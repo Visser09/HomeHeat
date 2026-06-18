@@ -153,6 +153,42 @@ export default function Home() {
         
         
       </section>
+      {/* The Hometown Heating Way */}
+      <section className="py-16 bg-gray-custom">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary-dark mb-4" data-testid="hometown-way-title">
+              The Hometown Heating Way
+            </h2>
+            <p className="text-xl text-gray-custom max-w-3xl mx-auto" data-testid="hometown-way-description">
+              We are more than a heating and cooling company. We are trusted home comfort advisors who help homeowners make confident decisions about their comfort systems.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card data-testid="hometown-way-card-0">
+              <CardContent className="p-6 text-center">
+                <Award className="w-10 h-10 text-primary mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-primary-dark mb-3">Education First</h3>
+                <p className="text-gray-custom">We help homeowners understand what is happening with their system, what caused the issue, and what options are available.</p>
+              </CardContent>
+            </Card>
+            <Card data-testid="hometown-way-card-1">
+              <CardContent className="p-6 text-center">
+                <Handshake className="w-10 h-10 text-primary mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-primary-dark mb-3">Solutions, Not Sales</h3>
+                <p className="text-gray-custom">Our recommendations are based on what is best for the home, whether that means repair, maintenance, improvement, or replacement.</p>
+              </CardContent>
+            </Card>
+            <Card data-testid="hometown-way-card-2">
+              <CardContent className="p-6 text-center">
+                <HomeIcon className="w-10 h-10 text-primary mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-primary-dark mb-3">Comfort & Peace of Mind</h3>
+                <p className="text-gray-custom">Our goal is to help families create healthier, safer, and more comfortable homes with advice they can trust.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
       {/* Comfort Club Feature */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

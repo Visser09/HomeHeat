@@ -1,0 +1,100 @@
+You are editing a React/Vite/Tailwind site for Hometown Heating.
+
+Goal:
+Add the new Hometown Heating brand messaging in a clean, minimal way without redesigning the site or changing unrelated files.
+
+Important rules:
+- Only edit these files: Home.tsx and About.tsx.
+- Do not change routing, navigation, assets, package.json, config files, CSS, or layout structure outside the requested sections.
+- Do not add new dependencies.
+- Reuse the existing Card, CardContent, Button, Link, and lucide-react patterns already used in the files.
+- Keep the same Tailwind styling style already used on the site.
+- Do not remove existing sections.
+- Do not rewrite the full pages.
+- Do not change phone numbers, email addresses, service plan content, financing content, or existing CTA links.
+- Make the copy concise and professional, not too long.
+
+Home.tsx change:
+Add a new section immediately after the Hero Section and before the Comfort Club Feature section.
+
+Section comment:
+{/* The Hometown Heating Way */}
+
+Section content:
+Title: The Hometown Heating Way
+Intro text:
+We are more than a heating and cooling company. We are trusted home comfort advisors who help homeowners make confident decisions about their comfort systems.
+
+Add three cards in a responsive grid:
+1. Education First
+Description:
+We help homeowners understand what is happening with their system, what caused the issue, and what options are available.
+
+2. Solutions, Not Sales
+Description:
+Our recommendations are based on what is best for the home, whether that means repair, maintenance, improvement, or replacement.
+
+3. Comfort & Peace of Mind
+Description:
+Our goal is to help families create healthier, safer, and more comfortable homes with advice they can trust.
+
+Style:
+- Use py-16 bg-white or bg-gray-custom, whichever flows best after the blue hero.
+- Use max-w-6xl mx-auto px-4 sm:px-6 lg:px-8.
+- Use text-center heading style consistent with existing sections.
+- Use Card and CardContent like existing feature cards.
+- Use data-testid attributes for the new section if consistent, but do not overdo it.
+
+About.tsx change:
+Add a new section immediately after the Our Story section and before the Why Choose Us section.
+
+Section comment:
+{/* Mission & Values */}
+
+Section content:
+Title: Our Mission & Values
+Intro text:
+To provide trusted heating, cooling, and home comfort solutions through exceptional service, expert craftsmanship, and a commitment to our customers and community.
+
+Add a short subtext:
+Our vision is to be the most trusted and respected home comfort company in the communities we serve.
+
+Add an 8-card responsive grid for these values:
+1. Customer First
+We treat every home as if it were our own and provide solutions that serve the customer’s needs.
+
+2. Integrity Always
+We are honest, transparent, and stand behind our recommendations, pricing, and workmanship.
+
+3. Craftsmanship
+We take pride in doing the job right with quality workmanship and attention to detail.
+
+4. Accountability
+We follow through on our commitments and take ownership of our work.
+
+5. Team Before Self
+We support each other because strong teams create better customer experiences.
+
+6. Continuous Improvement
+We keep learning and improving so we can better serve our customers.
+
+7. Safety Matters
+We prioritize the safety of our employees, customers, and community.
+
+8. Community Commitment
+We are proud to serve our local communities and build lasting relationships.
+
+Also update the bullet list inside “Our Commitment to You” to better match the new messaging:
+- Honest advice and clear options before any recommendation
+- Solutions based on the root cause, not pressure sales
+- Quality workmanship backed by our satisfaction guarantee
+- Respectful treatment of your home and property
+- Clear communication throughout every project
+- Guidance to help prevent future comfort issues
+
+Do not change the image, CTA button, or section layout in “Our Commitment to You.”
+
+After editing:
+- Run the project’s normal typecheck/build command if available.
+- Show me exactly which files changed.
+- Show a concise summary of what changed.
